@@ -1,0 +1,23 @@
+<div class="container">
+	<div class="row">
+		<div class="col-xs-offset-2 col-xs-8">
+			<h3><span>　新規投稿　</h3></span><br><br>
+	</div>
+
+	<div class="row">
+		<%= form_for @post,url:posts_path do |product| %>
+			<div class="col-xs-5">
+				<%= post.attachment_field :image %>
+			</div>
+			<div class="col-xs-5">
+				<p>Title<%= post.text_field :title %></p>
+				<p>商品説明<%= post.text_area :content, size: "20x10" %></p>
+			</div>
+
+	<div class="row">
+		<div class="col-xs-2 col-xs-offset-10">
+		<%= post.submit '更新', class: "btn btn-primary btn-lg btn-block" %>
+	</div>
+		<% end %>
+
+</div>

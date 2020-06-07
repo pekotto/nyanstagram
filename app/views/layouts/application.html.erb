@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Nyanstagram</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+  <header class="nav navbar-fixed-top">
+      <div class="container-fluid">
+          <ul class="nav navbar-nav navbar-right">
+            <% if user_signed_in? %>
+              <li><%= link_to "投稿する", posts_path, class: "nav-menu" %></li>
+              <li><%= link_to "Top", posts_path, class: "nav-menu" %></li>
+              <li><%= link_to "マイページ", users_path, class: "nav-menu" %></li>
+              <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-menu" %></li>
+            <% elsif admin_signed_in? %>
+            　<li><%= link_to "Top", posts_path, class: "nav-menu" %></li>
+              <li><%= link_to "猫種一覧", admin_favorite_breeds_path, class: "nav-menu" %></li>
+              <li><%= link_to "会員一覧", admin_users_path, class: "nav-menu" %></li>
+              <li><%= link_to "投稿一覧", admin_posts_path, class: "nav-menu", data: {turbolinks: false} %></li>
+              <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "nav-menu" %></li>
+            <% else %>
+              <li><%= link_to "新規登録", new_user_registration_path, class: "nav-menu", data: {turbolinks: false } %></li>
+              <li><%= link_to "ログイン", new_user_session_path, class: "nav-menu", data: {turbolinks: false } %></li>
+            <% end %>
+          </ul>
+      </div>
+    </header>
+
+    <main>
+      <%= yield %>
+    </main>
+
+    <footer>
+      <p>©DMM WEBCAMP, All Right Reserved.</p>
+    </footer>
+
+  </body>
+
+</html>

@@ -1,0 +1,39 @@
+<div class="row">
+	<div class="col-xs-3">
+		<h2>検索</h2>
+	</div>
+
+	<div class="col-xs-9">
+		<div class="#">
+			<h2>投稿一覧</h2>
+            <div class="post-list clearfix">
+
+                <% @posts.each do |post| %>
+                        <%= link_to post_path(post.id) do %>
+                            <table class="post-box" style="width: 230px; height: 250px; margin-bottom: 20px;">
+                            	<tr>
+                            		<td><%= post.title %></td>
+                            		<td></td>
+                            		<td></td>
+                            		<td><%= post.user.user_name %></td>
+                            	</tr>
+                            	<tr>
+                                	<td></td>
+                                </tr>
+                                <tr>
+                                	<td><%= post.title %></td>
+                                	<td><%= post.title %></td>
+                                	<td><%= post.title %></td>
+                                	<td><%= post.title %></td>
+                                </tr>
+                            </table>
+                        <% end %>
+                <% end %>
+            </div>
+		</div>
+
+
+		 <div class="col-xs-offset-5 col-xs-6"><%= paginate @posts %></div>
+	</div>
+	</div>
+</div>

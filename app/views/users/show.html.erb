@@ -1,0 +1,13 @@
+<div class="row">
+	<div class="col-md-1 col-sm-offset-2">
+    <%= attachment_image_tag @user, :plofile_image, :fill, 60, 60, format: 'jpeg', class: "profile-img", fallback: "no_image.jpg" %>
+	</div>
+
+	<div class="col-md-4">
+    	<p><%= @user.user_name %></p>
+    	<p><%= @user.introduction %></p>
+　　 <% if @user.id == current_user.id %>
+        <p><%= link_to "プロフィール編集", edit_users_path %></p>
+    <% end %>
+	</div>
+</div>

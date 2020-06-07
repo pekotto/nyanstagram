@@ -1,0 +1,46 @@
+<div class="col-md-6 col-sm-offset-5">
+  <h3>プロフィール編集</h3>
+</div>
+
+<div class="col-md-6 col-sm-offset-5 edit-menu">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="field">
+      <%= f.label :name %><br />
+      <%= f.text_field :name, autofocus: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :user_name %><br />
+      <%= f.text_field :user_name, autofocus: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :introduction %><br />
+      <%= f.text_area :introduction, size: "40x2", autofocus: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :favorite_breed %><br />
+      <%= f.collection_select :favorite_breed_id, FavoriteBreed.all, :id, :cat_breed, include_blank: "選択して下さい" %></p>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Update" %>
+    </div>
+  <% end %>
+</div>
+
+<div class="col-md-6 col-sm-offset-7">
+  <p><%= link_to "退会する", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+</div>
+
+<div class="col-md-6 col-sm-offset-5">
+  <%= link_to "Back", :back %>
+</div>
