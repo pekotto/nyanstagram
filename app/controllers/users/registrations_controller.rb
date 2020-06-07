@@ -45,7 +45,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def after_update_path_for(resource)
-    users_path
+    user_path(current_user.id)
   end
 
   # If you have extra params to permit, append them to the sanitizer.

@@ -9,7 +9,7 @@
 		<%= form_for @post,url:posts_path do |post| %>
 
 			<div class="col-xs-6">
-				<p>商品画像：<%= post.attachment_field :post_images_images, multiple: true %></p>
+				<p>商品画像：<%= post.attachment_field :image %></p>
 			</div>
 
 			<div class="col-xs-5">

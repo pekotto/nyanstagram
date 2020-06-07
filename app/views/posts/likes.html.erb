@@ -1,7 +1,15 @@
-<% @likes.each do |like| %>
-  <% post = Post.find_by(id: like.post_id) %>
-  <% user = User.find_by(id: post.user_id) %>
-  <%= link_to( user.user_name, "/users/#{user.id}" ) %>
-  <%= link_to(post.text, "/posts/#{post.id}") %>
-  <%= link_to(post.content, "/posts/#{post.id}") %>
-<% end %>
+<div class="row">
+	<div class="col-xs-3">
+        <%= render 'layouts/searchform' %>
+	</div>
+
+	<div class="col-xs-8">
+		<% @likes.each do |like| %>
+  		<% post = Post.find_by(id: like.post_id) %>
+  		<% user = User.find_by(id: post.user_id) %>
+  		<%= link_to( user.user_name, "/users/#{user.id}" ) %>
+  		<%= link_to(post.title, "/posts/#{post.id}") %>
+  		<%= link_to(post.content, "/posts/#{post.id}") %>
+		<% end %>
+	</div>
+</div>

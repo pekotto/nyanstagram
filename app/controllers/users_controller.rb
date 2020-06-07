@@ -1,25 +1,24 @@
 class UsersController < ApplicationController
-  def posts
-    @user = User.find(params[:id])
-    @posts = Post.where(user_id: @user.id)
+
+  def index
+    @posts = current_user.posts.all
   end
 
   def show
-  	@user = current_user
+  	@user = User.find(params[:id])
+    @posts = Post.where(user_id: @user.id).reverse_order
   end
 
-  def edit
-  	@user = User.find(params[:id])
+  def following
+      @user = User.find(params[:id])
+      @users = @user.followings
+      render 'show_follow'
   end
 
-  def update
-  	@user = User.find(params[:id])
-  	@user.update(user_params)
-	redirect_to user_path(@user)
-  end
-
-  def destroy
-  	@user = User.find(params[:id])
+  def followers
+    @user = User.find(params[:id])
+    @users = @user.followers
+    render 'show_follower'
   end
 
    private

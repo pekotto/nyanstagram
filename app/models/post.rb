@@ -2,8 +2,7 @@ class Post < ApplicationRecord
 
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
-  has_many :post_images, dependent: :destroy
-  accepts_attachments_for :post_images, attachment: :image
+  attachment :image
   belongs_to :user
 
 

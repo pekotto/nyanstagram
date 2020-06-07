@@ -32,7 +32,7 @@ protected
 
     def configure_permitted_parameters
       devise_parameter_sanitizer.permit(:sign_up, keys: [:name,:user_name, :email])
-      devise_parameter_sanitizer.permit(:account_update, keys: [:user_name, :introduction, :plofile_image, :favorite_breed])
+      devise_parameter_sanitizer.permit(:account_update, keys: [:user_name, :introduction, :plofile_image, :favorite_breed_id])
     end
 
 end

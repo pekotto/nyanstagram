@@ -5,7 +5,6 @@ class PostsController < ApplicationController
 
   def new
   	@post = Post.new
-    @post.post_images.build
   end
 
   def show
@@ -40,13 +39,13 @@ class PostsController < ApplicationController
   end
 
   def likes
-    @user = User.find(id: params[:id])
-    @likes = like.where(user_id: @user.id)
+    @user = User.find(params[:id])
+    @likes = Like.where(user_id: @user.id)
   end
 
   private
 
    def post_params
-     params.require(:post).permit(:title, :content, post_images_images: [])
+     params.require(:post).permit(:title, :content, :image)
    end
 end
