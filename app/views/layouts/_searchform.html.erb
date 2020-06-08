@@ -1,24 +1,11 @@
-<div class="search">
-	<table class="search-menu col-xs-8">
-  		<tr>
-    		<th>投稿一覧</th>
-  		</tr>
-  		<tr>
-			<td><%= link_to "ユーザー", users_path %></td>
-	    </tr>
-	    <tr>
-			<td><%= link_to "お気に入り", posts_likes_path %></td>
-	    </tr>
-	    <tr>
-			<td><%= link_to "フォロー", posts_path %></td>
-	    </tr>
-	     <tr>
-			<td><%= link_to "フォロワー", posts_path %></td>
-	    </tr>
-	    <tr>
-			<td><%= link_to "好きな猫種", posts_path %></td>
-	    </tr>
-	    <tr></tr>
-	    <tr></tr>
-	</table>
+
+<div class="sidemenu col-xs-10">
+	<h3>投稿一覧</h3>
+	<ul>
+		<li><%= link_to "ユーザー", users_path %></li>
+		<li><%= link_to "お気に入り", posts_likes_path %></li>
+		<li><%= link_to "フォロー", posts_following_posts_path %></li>
+		<li><%= link_to "フォロワー", posts_follower_posts_path %></li>
+		<li><%= link_to "おすすめ", posts_breeds_path %></li>
+	</ul>
 </div>

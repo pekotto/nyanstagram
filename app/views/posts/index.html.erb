@@ -3,33 +3,29 @@
         <%= render 'layouts/searchform' %>
 	</div>
 
-	<div class="col-xs-6 col-xs-offset-2">
-		<div class="#">
-			<h2>投稿一覧</h2>
-            <div class="post-list clearfix">
+	<div class="col-xs-9">
+		<h3>投稿一覧</h3>
+            <div class="post-list">
 
                 <% @posts.each do |post| %>
                         <%= link_to post_path(post.id) do %>
-                            <table class="post-box" style="width: 230px; height: 250px; margin-bottom: 20px;">
+                            <table class="post-box">
                             	<tr>
-                            		<td colspan="2"><%= attachment_image_tag post.user, :plofile_image, :fill, 30, 30, format: 'jpeg', class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg" %><%= link_to post.user.user_name, user_path(post.user) %></td>
-                                    <td colspan="2"><%= post.title %></td>
+                            		<td colspan="4"><%= attachment_image_tag post.user, :plofile_image, :fill, 25, 25, format: 'jpeg', class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg" %><%= link_to post.user.user_name, user_path(post.user) %></td>
                                     <td></td>
                             	</tr>
+                                <tr>
+                                    <td colspan="4"><%= post.title %></td>
+                                    <td></td>
+                                </tr>
                             	<tr>
-                                	<td colspan="5"><%= attachment_image_tag post, :image, :fill, 400, 400, format: 'jpeg', fallback: "no_image.jpg" %></td>
+                                	<td colspan="5"><%= attachment_image_tag post, :image, :fill, 200, 160, format: 'jpeg', fallback: "no_image.jpg" %></td>
                                 </tr>
                                 <tr>
-                                	<td colspan="2"><i class="fas fa-paw fa-lg" aria-hidden="true"></i></td>
-                                	<td></td>
-                                    <td colspan="2"><%= post.content %><%= post.content %></td>
+                                	<td colspan="5"><i class="fas fa-paw" aria-hidden="true"></i><%= post.likes.count %> いいね</td>
                                 </tr>
                                 <tr>
-                                    <td><%= post.likes.count %> いいね</td>
-                                    <td>コメント数<%= post.comments.count %></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td colspan="5"><%= post.content %></td>
                                 </tr>
                             </table>
                         <% end %>
@@ -37,8 +33,7 @@
             </div>
 		</div>
 
-
-		 <div class="col-xs-offset-5 col-xs-6"><%= paginate @posts %></div>
-	</div>
+		<div class="col-xs-offset-5 col-xs-6"><%= paginate @posts %></div>
 	</div>
 </div>
+

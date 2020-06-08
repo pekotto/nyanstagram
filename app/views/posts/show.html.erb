@@ -23,6 +23,9 @@
 		<% end %>
 		</div>
 
+<% @post.tags.each do |tag| %>
+  <p>#<%= tag.tag_name %></p>
+<% end %>
 		<p><%= link_to "編集",edit_post_path(@post.id) %></p>
 		<p><%= link_to "削除",post_path(@post.id), method: :delete, data: { confirm: "削除してよろしいですか？" } %></p>
   	</div>
