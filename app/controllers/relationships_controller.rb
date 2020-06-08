@@ -1,4 +1,4 @@
-class RerationshipsController < ApplicationController
+class RelationshipsController < ApplicationController
 
    def create
     @user = User.find(params[:relationship][:following_id])

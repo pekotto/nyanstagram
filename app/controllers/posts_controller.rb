@@ -39,8 +39,13 @@ class PostsController < ApplicationController
   end
 
   def likes
-    @user = User.find(params[:id])
+    @user = current_user
     @likes = Like.where(user_id: @user.id)
+  end
+
+  def following_posts
+    @user = current_user
+    @users = @user.followings.order("created_at DESC").page(params[:page]).per(20)
   end
 
   private

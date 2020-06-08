@@ -3,13 +3,44 @@
         <%= render 'layouts/searchform' %>
 	</div>
 
-	<div class="col-xs-8">
-		<% @likes.each do |like| %>
-  		<% post = Post.find_by(id: like.post_id) %>
-  		<% user = User.find_by(id: post.user_id) %>
-  		<%= link_to( user.user_name, "/users/#{user.id}" ) %>
-  		<%= link_to(post.title, "/posts/#{post.id}") %>
-  		<%= link_to(post.content, "/posts/#{post.id}") %>
-		<% end %>
+	<div class="col-xs-6 col-xs-offset-2">
+		<div class="#">
+			<h2>投稿一覧</h2>
+            <div class="post-list clearfix">
+
+				<% @likes.each do |like| %>
+  					<% post = Post.find_by(id: like.post_id) %>
+  					<% user = User.find_by(id: post.user_id) %>
+
+                        <%= link_to post_path(post.id) do %>
+                            <table class="post-box" style="width: 230px; height: 250px; margin-bottom: 20px;">
+                            	<tr>
+                            		<td colspan="2"><%= attachment_image_tag post.user, :plofile_image, :fill, 30, 30, format: 'jpeg', class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg" %><%= link_to post.user.user_name, user_path(post.user) %></td>
+                                    <td colspan="2"><%= post.title %></td>
+                                    <td></td>
+                            	</tr>
+                            	<tr>
+                                	<td colspan="5"><%= attachment_image_tag post, :image, :fill, 400, 400, format: 'jpeg', fallback: "no_image.jpg" %></td>
+                                </tr>
+                                <tr>
+                                	<td colspan="2"><i class="fas fa-paw fa-lg" aria-hidden="true"></i></td>
+                                	<td></td>
+                                    <td colspan="2"><%= post.content %><%= post.content %></td>
+                                </tr>
+                                <tr>
+                                    <td><%= post.likes.count %> いいね</td>
+                                    <td>コメント数<%= post.comments.count %></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        <% end %>
+                <% end %>
+            </div>
+		</div>
+
+
+	</div>
 	</div>
 </div>
