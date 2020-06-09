@@ -1,0 +1,23 @@
+            <p><%= comments.count %>件コメント</p>
+        <ol>
+        <% comments.each do |comment| %>
+            <li class="comment">
+                <div class="comment-body bb">
+                    <div class="comment-avatar">
+                        <div class="avatar col-xs-12">
+                            <%= attachment_image_tag comment.user, :plofile_image, :fill, 40, 40, format: 'jpeg', class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg" %>
+                            <%= comment.comment %>
+                            <%= link_to "削除", post_comments_path(comment), method: :delete, remote: true %>
+                        </div>
+                    </div>
+                    <div class="comment-text">
+                        <div class="comment-author clearfix">
+                            <%= link_to comment.user.user_name, user_path(comment.user) %>
+                            <span class="comment-date"><%= comment.created_at.strftime('%Y/%m/%d') %></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        <% end %>
+        </ol>

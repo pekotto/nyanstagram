@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-  	@posts = Post.page(params[:page]).reverse_order
+  	@posts = Post.order("created_at DESC").page(params[:page]).per(8)
   end
 
   def new
@@ -40,19 +40,19 @@ class PostsController < ApplicationController
     redirect_to post_path
   end
 
-  def likes
+  def like_posts
     @user = current_user
-    @likes = Like.where(user_id: @user.id).order("created_at ASC").page(params[:page]).per(20)
+    @likes = Like.where(user_id: @user.id).order("created_at DESC").page(params[:page]).per(8)
   end
 
   def following_posts
     @user = current_user
-    @users = @user.followings.order("created_at ASC").page(params[:page]).per(20)
+    @users = @user.followings.order("created_at DESC").page(params[:page]).per(8)
   end
 
   def follower_posts
     @user = current_user
-    @users = @user.followers.order("created_at ASC").page(params[:page]).per(20)
+    @users = @user.followers.order("created_at DESC").page(params[:page]).per(8)
   end
 
   def breeds

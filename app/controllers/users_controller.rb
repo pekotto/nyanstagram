@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-    @posts = current_user.posts.all.order("created_at ASC").page(params[:page]).per(20)
+    @posts = current_user.posts.all.order("created_at DESC").page(params[:page]).per(8)
   end
 
   def show

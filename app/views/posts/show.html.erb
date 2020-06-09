@@ -10,22 +10,15 @@
 		<%= attachment_image_tag @post, :image, :fill, 300, 300, format: 'jpeg', fallback: "no_image.jpg" %>
 
 		<div class="post-info col-xs-12">
-		<% if @post.liked_by?(current_user) %>
-    		<%= link_to post_like_path(@post), method: :delete do %>
-    			<i class="fas fa-paw" aria-hidden="true" style="color: black;"></i>
-    			<%= @post.likes.count %> いいね
-    		<% end %>
-		<% else %>
-    		<%= link_to post_likes_path(@post), method: :post do %>
-    			<i class="fas fa-paw-o" aria-hidden="true"></i>
-    			<%= @post.likes.count %> いいね
-    		<% end %>
-		<% end %>
+			<div class="post_<%= @post.id %>">
+				<%= render 'posts/likesform', post: @post %>
+			</div>
 		</div>
 
-<% @post.tags.each do |tag| %>
-  <p>#<%= tag.tag_name %></p>
-<% end %>
+		<% @post.tags.each do |tag| %>
+  			<p>#<%= tag.tag_name %></p>
+		<% end %>
+
 		<p><%= link_to "編集",edit_post_path(@post.id) %></p>
 		<p><%= link_to "削除",post_path(@post.id), method: :delete, data: { confirm: "削除してよろしいですか？" } %></p>
   	</div>
@@ -45,38 +38,16 @@
 		</div>
 
 		<div class="post-comment-form col-xs-10 col-xs-offset-2">
-		<%= form_for [@post, @comment] do |f| %>
+		<%= form_with model:[@post, @comment], data: {remote: true} do |f| %>
         	<p><%= f.text_area :comment, rows:'2', class: "form-control",placeholder: "コメントをここに" %></p>
     		<%= f.submit "送信", class: "btn btn-sm pull-right" %>
 		<% end %>
 		</div>
 
-
 		<div class="col-xs-12">
-			<p><%= @post.comments.count %>件コメント</p>
-		<ol>
-    	<% @post.comments.each do |comment| %>
-        	<li class="comment">
-            	<div class="comment-body bb">
-                	<div class="comment-avatar">
-                    	<div class="avatar col-xs-12">
-                        	<%= attachment_image_tag comment.user, :plofile_image, :fill, 40, 40, format: 'jpeg', class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg" %>
-                        	<%= comment.comment %>
-                        	<%= link_to "削除", post_comment_path(comment.post, comment), method: :delete %>
-                    	</div>
-                	</div>
-                	<div class="comment-text">
-                    	<div class="comment-author clearfix">
-                        	<a href="#" class="link-author"><%= link_to comment.user.user_name, users_path %><%= comment.user.user_name %></a>
-                        	<span class="comment-meta">
-                        	<span class="comment-date"><%= comment.created_at.strftime('%Y/%m/%d') %></span>
-                        	</span>
-                    	</div>
-                	</div>
-            	</div>
-       	 	</li>
-    	<% end %>
-		</ol>
+    		<div class="comment_<%= @post.id %>">
+      			<%= render 'posts/comment', comments: @post.comments %>
+    		</div>
 		</div>
 	</div>
 </div>

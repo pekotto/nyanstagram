@@ -26,14 +26,14 @@ Rails.application.routes.draw do
 
   resources :relationships, only: [:create, :destroy]
 
-  get 'posts/likes' => 'posts#likes'
+  get 'posts/like_posts' => 'posts#like_posts'
   get 'posts/following_posts' => 'posts#following_posts'
   get 'posts/follower_posts' => 'posts#follower_posts'
   get 'posts/breeds' => 'posts#breeds'
 
   resources :posts do
-     resources :comments, only: [:create, :destroy]
-     resources :likes, only: [:create, :destroy]
+     resource :comments, only: [:create, :destroy]
+     resource :likes, only: [:create, :destroy]
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
