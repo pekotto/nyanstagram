@@ -24,6 +24,9 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :messages, only: [:create]
+  resources :rooms, only: [:create, :show]
+
   resources :relationships, only: [:create, :destroy]
 
   get 'posts/like_posts' => 'posts#like_posts'

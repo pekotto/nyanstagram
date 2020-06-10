@@ -12,6 +12,8 @@ class User < ApplicationRecord
   has_many :followers, through: :follower_relationships
   has_many :likes
   has_many :like_posts, through: :likes, source: :post
+  has_many :messages, dependent: :destroy
+  has_many :entries, dependent: :destroy
   attachment :plofile_image, destroy: false
   belongs_to :favorite_breed
 
