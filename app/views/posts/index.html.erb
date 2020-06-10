@@ -12,7 +12,7 @@
                             <table class="post-box">
                             	<tr>
                             		<td>
-                                        <%= attachment_image_tag post.user, :plofile_image, :fill, 25, 25, format: 'jpeg', class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg" %>
+                                        <%= attachment_image_tag post.user, :plofile_image, :fill, 20, 20, format: 'jpeg', class: "img-circle pull-left profile-thumb post-icon", fallback: "no_image.jpg" %>
                                         <%= link_to post.user.user_name, user_path(post.user),class: "post-list-items" %>
                                     </td>
                             	</tr>
@@ -31,9 +31,8 @@
                             </table>
                     <% end %>
                 <% end %>
-            </div>
-		</div>
 
+            </div>
 		<div class="col-xs-offset-6 col-xs-6"><%= paginate @posts %></div>
 	</div>
 </div>

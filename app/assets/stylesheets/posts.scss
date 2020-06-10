@@ -3,7 +3,22 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .post-list {
+  display: flex;
+  flex-wrap: wrap;
 	.post-list-items {
 		text-decoration: none;
 	}
+}
+
+.post-box {
+  border: solid 1px;
+  margin: 20px 10px;
+}
+
+.post-icon {
+  margin: 2px;
+}
+
+p.post-icon-pin {
+  text-align: right;
 }

@@ -8,31 +8,32 @@
             <div class="post-list">
 
                 <% @posts.each do |post| %>
-                        <%= link_to post_path(post.id) do %>
+                    <%= link_to post_path(post),class: "post-list-items" do %>
                             <table class="post-box">
                                 <tr>
-                                    <td colspan="4"><%= attachment_image_tag post.user, :plofile_image, :fill, 25, 25, format: 'jpeg', class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg" %><%= link_to post.user.user_name, user_path(post.user) %></td>
-                                    <td></td>
+                                    <td>
+                                        <%= attachment_image_tag post.user, :plofile_image, :fill, 20, 20, format: 'jpeg', class: "img-circle pull-left profile-thumb post-icon", fallback: "no_image.jpg" %>
+                                        <%= link_to post.user.user_name, user_path(post.user),class: "post-list-items" %>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td colspan="4"><%= post.title %></td>
-                                    <td></td>
+                                    <td align="center"><%= link_to post.title, post_path(post.id),class: "post-list-items" %></td>
                                 </tr>
                                 <tr>
-                                    <td colspan="5"><%= attachment_image_tag post, :image, :fill, 200, 160, format: 'jpeg', fallback: "no_image.jpg" %></td>
+                                    <td><%= attachment_image_tag post, :image, :fill, 200, 160, format: 'jpeg', fallback: "no_image.jpg" %></td>
                                 </tr>
                                 <tr>
-                                    <td colspan="5"><i class="fas fa-paw" aria-hidden="true"></i><%= post.likes.count %> いいね</td>
+                                    <td class="post_<%= post.id %>"><%= render 'posts/likesform', post: post %></td>
                                 </tr>
                                 <tr>
-                                    <td colspan="5"><%= post.content %></td>
+                                    <td align="right"><%= link_to post.comments.count, post_path(post.id),class: "post-list-items" %>コメント<i class="far fa-comment-dots"></i></td>
                                 </tr>
                             </table>
-                        <% end %>
+                    <% end %>
                 <% end %>
             </div>
         </div>
 
-        <div class="col-xs-offset-5 col-xs-6"><%= paginate @posts %></div>
+        <div class="col-xs-offset-6 col-xs-6"><%= paginate @posts %></div>
     </div>
 </div>
