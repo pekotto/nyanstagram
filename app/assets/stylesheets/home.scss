@@ -1,3 +1,80 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.container {
+  width: 1170px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+
+/* top-wrapperクラスのCSSを指定してください */
+.top-wrapper {
+ padding-top: 120px;
+ padding-bottom: 150px;
+ background:#fff url(top2.jpg) no-repeat right;
+ background-size: contain;
+ color: gray;
+ text-align: left;
+}
+
+/* top-wrapperの中の<h1>のCSSを指定してください */
+.top-wrapper h1 {
+  opacity: 0.7;
+  font-size: 45px;
+
+}
+
+
+/* top-wrapperの中の<p>のCSSを指定してください */
+.top-wrapper p {
+  opacity: 0.7;
+}
+
+/* btnクラスのCSSを指定してください */
+.btn-top {
+  padding: 8px 24px;
+  color: white;
+  display: inline-block;
+  opacity: 0.8;
+  border-radius: 4px;
+}
+
+.btn-top:hover {
+  opacity: 1;
+}
+
+/* signupクラスのCSSを指定してください */
+.signup {
+  background-color: #239b76;
+}
+
+
+/* facebookクラスのCSSを指定してください */
+.facebook {
+  background-color: #3b5998;
+  margin-right: 10px;
+}
+
+
+/* twitterクラスのCSSを指定してください */
+.twitter {
+  background-color: #55acee;
+}
+
+
+/* btn-wrapperクラスのCSSを指定してください */
+.btn-wrapper {
+  margin: 20px 0;
+}
+
+
+/* btn-wrapperクラスの中にある<p>のCSSを指定してください */
+.btn-wrapper p {
+  margin: 10px 0;
+}
+
+.signup {
+  margin-left: 80px;
+}

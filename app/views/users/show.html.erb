@@ -18,19 +18,19 @@
     <%= attachment_image_tag @user, :plofile_image, :fill, 90, 90, format: 'jpeg', class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg" %>
 	</div>
 
-	<div class="col-md-4">
+	<div class="col-md-6">
 		<div class="col-md-12 info-menu">
-    		<p class="info-menu-left col-md-5">ユーザーネーム</p>
+    		<p class="info-menu-left col-md-3">ユーザーネーム</p>
     		<p class="info-menu-right"><%= @user.user_name %></p>
     	</div>
 
 		<div class="col-md-12 info-menu">
-    		<p class="info-menu-left col-md-5">好きな猫種</p>
+    		<p class="info-menu-left col-md-3">好きな猫種</p>
     		<p class="info-menu-right"><%= @user.favorite_breed.cat_breed %></p>
     	</div>
 
 		<div class="col-md-12 info-menu">
-    		<p class="info-menu-left col-md-5">自己紹介</p>
+    		<p class="info-menu-left col-md-3">自己紹介</p>
     		<p class="info-menu-right"><%= @user.introduction %></p>
     	</div>
     </div>
