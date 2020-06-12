@@ -13,8 +13,8 @@
 .top-wrapper {
  padding-top: 120px;
  padding-bottom: 150px;
- background:#fff url(top2.jpg) no-repeat right;
- background-size: contain;
+ background:#fff url(top5.png) no-repeat right;
+ background-size: cover;
  color: gray;
  text-align: left;
 }
@@ -77,4 +77,48 @@
 
 .signup {
   margin-left: 80px;
+}
+
+/* lesson-wrapperクラスのCSSを指定してください */
+.lesson-wrapper {
+ padding-top: 120px;
+ padding-bottom: 150px;
+ background-color: #eeeeee;
+ color: gray;
+ text-align: center;
+}
+
+/* lesson-wrapperの中の<h1>のCSSを指定してください */
+.lesson-wrapper h1 {
+  opacity: 0.7;
+  font-size: 45px;
+
+}
+
+
+/* lesson-wrapperの中の<p>のCSSを指定してください */
+.lesson-wrapper p {
+  opacity: 0.7;
+}
+
+/* message-wrapperクラスのCSSを指定してください */
+.message-wrapper {
+ padding-top: 120px;
+ padding-bottom: 150px;
+ background-color: #eeeeee;
+ color: gray;
+ text-align: center;
+}
+
+/* message-wrapperの中の<h1>のCSSを指定してください */
+.message-wrapper h1 {
+  opacity: 0.7;
+  font-size: 45px;
+
+}
+
+
+/* message-wrapperの中の<p>のCSSを指定してください */
+.message-wrapper p {
+  opacity: 0.7;
 }
