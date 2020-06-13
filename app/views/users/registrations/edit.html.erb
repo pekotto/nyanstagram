@@ -1,11 +1,21 @@
-<div class="col-md-6 col-sm-offset-5">
+<div class="col-md-6 col-sm-offset-3">
   <h3>プロフィール編集</h3>
 </div>
 
-<div class="col-md-6 col-sm-offset-5 edit-menu">
+<div class="col-md-8 col-sm-offset-2 edit-menu">
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
 
+
+  <div class="col-md-5">
+    <div class="user-edit-image">
+      <%= attachment_image_tag @user, :plofile_image, :fill, 200, 200, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%>
+    </div>
+     <label class="control-label sr-only" for="inputEmail">ProfileImage</label>
+     <%= f.attachment_field :plofile_image, placeholder: "プロフィール画像", class: "user-edit-form" %>
+  </div>
+
+  <div class="col-md-7">
     <div class="field">
       <%= f.label :name %><br />
       <%= f.text_field :name, autofocus: true %>
@@ -36,9 +46,10 @@
     </div>
   <% end %>
 </div>
+</div>
 
-<div class="col-md-6 col-sm-offset-7">
-  <p><%= link_to "退会する", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<div class="col-md-6 col-sm-offset-8">
+  <p><%= link_to ">>退会する", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 </div>
 
 <div class="col-md-6 col-sm-offset-5">

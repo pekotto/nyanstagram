@@ -18,11 +18,27 @@ Rails.application.routes.draw do
     resources :favorite_breeds
   end
 
-  resource :users, only: [:index, :show, :edit, :update, :destroy]
+  resources :users, only: [:index, :show] do
+    member do
+      get :following, :followers
+    end
+  end
+
+  resources :messages, only: [:create]
+  resources :rooms, only: [:create, :show]
+
+  resources :relationships, only: [:create, :destroy]
+
+  get 'posts/like_posts' => 'posts#like_posts'
+  get 'posts/following_posts' => 'posts#following_posts'
+  get 'posts/follower_posts' => 'posts#follower_posts'
+  get 'posts/breeds' => 'posts#breeds'
 
   resources :posts do
-     resources :comments, only: [:create, :destroy]
-     resources :likes, only: [:create, :destroy]
+     resource :comments, only: [:create, :destroy]
+     resource :likes, only: [:create, :destroy]
   end
+
+  get '/search' => 'search#index', as: 'search'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

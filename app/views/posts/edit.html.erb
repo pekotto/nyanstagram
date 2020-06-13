@@ -1,11 +1,11 @@
 <div class="container">
 	<div class="row">
 		<div class="col-xs-offset-2 col-xs-8">
-			<h3><span>　新規投稿　</h3></span><br><br>
+			<h3><span>　投稿編集　</h3></span><br><br>
 	</div>
 
 	<div class="row">
-		<%= form_for @post,url:posts_path do |product| %>
+		<%= form_for @post,url:post_path do |post| %>
 			<div class="col-xs-5">
 				<%= post.attachment_field :image %>
 			</div>
