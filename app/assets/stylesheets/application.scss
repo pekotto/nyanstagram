@@ -18,11 +18,12 @@
 
 
 main {
-  margin-top :50px;
+  margin :40px 0;
 }
 
 header {
-  background-color: #A9A9A9;
+  background-color: #EEEEEE;
+  border-bottom: 1px solid black;
 }
 
 footer {
@@ -30,10 +31,68 @@ footer {
   bottom: 0px;
   left: 0px;
   width: 100%;
-  height: 50px;
-  background-color: #A9A9A9;
+  height: 40px;
+  background-color: #EEEEEE;
+  border-top: 1px solid black;
 }
 
 footer p {
-	text-align: right;
+	text-align: center;
+  margin-top: 10px;
+}
+
+
+/*サイドメニュー設定*/
+.sidemenu {
+  margin-top: 100px;
+}
+
+.sidemenu h3{
+  margin:0 0 7px 0;
+  padding:5px 0 5px 5px;
+  background: #CCCCCC;
+  border-left:7px solid #A9A9A9;
+  font-size:16px;
+  line-height:1.3em;
+}
+
+/*メニュー項目のブロック全体*/
+.sidemenu ul{
+  margin:0; /*ulタグの領域の外側の余白を0にリセット*/
+  padding:0;  /*ulタグの領域の内側の余白を0にリセット*/
+  list-style:none;  /*メニュー項目先頭の黒丸を消去*/
+}
+
+.sidemenu li a{
+  background:url("cat_foot.png") no-repeat 0 6px;
+  padding:3px 0 3px 18px;
+  border-bottom:0px solid #f7b1a6;
+  font-size:14px;
+  line-height:1.3em;
+  display:block;
+  text-decoration:none;
+  color:#333333;
+}
+
+.sidemenu li a:hover{
+  color:#666666;
+  background:url("cat_foot.png") no-repeat 0 6px #DDDDDD;
+}
+
+a {
+  text-decoration: none;
+  color:#333333;
+}
+
+.follow-btn {
+  margin-top:10px;
+}
+
+.nav-menu {
+  text-align: center;
+  font-family: "YuGothic";
+}
+
+.fa-paw {
+  margin-left: 5px;
 }

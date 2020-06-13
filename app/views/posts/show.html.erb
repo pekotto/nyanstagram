@@ -1,69 +1,54 @@
 <div class="row">
-
 	<div class="col-xs-4 col-xs-offset-1">
-		<h2><%= @post.title %></h2>
+		<h3><%= @post.title %></h3>
+	</div>
+</div>
 
-		<% if @post.post_images.present? %>
-  			<% @post.post_images.each do |image| %>
-    		<%= attachment_image_tag image, :image, :fill, 250, 250 %>
-  			<% end %>
-  		<% else %>
-    		<%= image_tag 'no_image.jpg', size: '250x250' %>
+<div class="row">
+	<div class="col-xs-4 col-xs-offset-1">
+
+		<%= attachment_image_tag @post, :image, :fill, 300, 300, format: 'jpeg', fallback: "no_image.jpg" %>
+
+		<div class="post-info col-xs-12">
+			<div class="post_<%= @post.id %>">
+				<%= render 'posts/likesform', post: @post %>
+			</div>
+		</div>
+
+		<% @post.tags.each do |tag| %>
+  			<p>#<%= tag.tag_name %></p>
 		<% end %>
 
 		<p><%= link_to "編集",edit_post_path(@post.id) %></p>
 		<p><%= link_to "削除",post_path(@post.id), method: :delete, data: { confirm: "削除してよろしいですか？" } %></p>
   	</div>
 
-	<div class="col-xs-6">
+	<div class="col-xs-5">
+		<div class="post-info col-xs-2">
+			<p><%= attachment_image_tag @post.user, :plofile_image, :fill, 60, 60, format: 'jpeg', class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg" %></p>
+		</div>
 
-		<% if @post.liked_by?(current_user) %>
-    		<%= link_to post_like_path(@post), method: :delete do %>
-    			<i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>
-    			<%= @post.likes.count %> いいにゃ
-    		<% end %>
-		<% else %>
-    		<%= link_to post_likes_path(@post), method: :post do %>
-    			<i class="fa fa-heart-o" aria-hidden="true"></i>
-    			<%= @post.likes.count %> いいにゃ
-    		<% end %>
+		<div class="post-info col-xs-7">
+			<%= @post.user.user_name %></p>
+			<p><%= @post.user.user_name %><%= @post.user.user_name %><%= @post.user.user_name %></p>
+		</div>
+
+		<div class="post-info-content col-xs-12">
+			<p><%= @post.content %></p>
+		</div>
+
+		<div class="post-comment-form col-xs-10 col-xs-offset-2">
+		<%= form_with model:[@post, @comment], data: {remote: true} do |f| %>
+        	<p><%= f.text_area :comment, rows:'2', class: "form-control",placeholder: "コメントをここに" %></p>
+    		<%= f.submit "送信", class: "btn btn-sm pull-right" %>
 		<% end %>
+		</div>
 
-		<p>text：<%= @post.content %></p><br>
-		<p><%= @post.comments.count %>件コメント</p>
-
-		<%= form_for [@post, @comment] do |f| %>
-        	<p><%= f.text_area :comment, rows:'3', class: "form-control",placeholder: "コメントをここに" %></p>
-    		<%= f.submit "送信", class: "btn btn-base-1 mt-20 pull-right" %>
-		<% end %>
+		<div class="col-xs-12">
+    		<div class="comment_<%= @post.id %>">
+      			<%= render 'posts/comment', comments: @post.comments %>
+    		</div>
+		</div>
 	</div>
-
-
-	<div class="col-xs-6">
-<ol>
-    <% @post.comments.each do |comment| %>
-        <li class="comment">
-            <div class="comment-body bb">
-                <div class="comment-avatar">
-                    <div class="avatar">
-                        <%= image_tag('no_image.jpg', style: "width: 60px; height: 60px;") %>
-                        <%= comment.comment %>
-                        <%= link_to "削除", post_comment_path(comment.post, comment), method: :delete %>
-                    </div>
-                </div>
-                <div class="comment-text">
-                    <div class="comment-author clearfix">
-                        <a href="#" class="link-author"><%= comment.user.user_name %></a>
-                        <span class="comment-meta">
-                        <span class="comment-date"><%= comment.created_at.strftime('%Y/%m/%d') %></span>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </li>
-    <% end %>
-</ol>
-</div>
-
 </div>
 

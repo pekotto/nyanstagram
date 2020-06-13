@@ -4,7 +4,7 @@
     <title>Nyanstagram</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -15,9 +15,9 @@
       <div class="container-fluid">
           <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
-              <li><%= link_to "投稿する", posts_path, class: "nav-menu" %></li>
               <li><%= link_to "Top", posts_path, class: "nav-menu" %></li>
-              <li><%= link_to "マイページ", users_path, class: "nav-menu" %></li>
+              <li><%= link_to "投稿する", new_post_path, class: "nav-menu" %></li>
+              <li><%= link_to "マイページ", user_path(current_user.id), class: "nav-menu" %></li>
               <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-menu" %></li>
             <% elsif admin_signed_in? %>
             　<li><%= link_to "Top", posts_path, class: "nav-menu" %></li>

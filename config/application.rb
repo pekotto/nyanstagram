@@ -14,6 +14,7 @@ module Nyanstagram
     #　以下の記述を追記する(設定必須)
     # デフォルトのlocaleを日本語(:ja)にする
     config.i18n.default_locale = :ja
+    config.encoding = "utf-8"
 
   end
 end
