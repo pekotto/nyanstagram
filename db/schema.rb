@@ -148,7 +148,6 @@ ActiveRecord::Schema.define(version: 2020_06_10_145508) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["favorite_breed_id"], name: "index_users_on_favorite_breed_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    t.index [nil], name: "index_users_on_unlock_token", unique: true
   end
 
 end
