@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
  namespace :admin do
     resources :favorite_breeds
+    resources :users
   end
 
   resources :users, only: [:index, :show] do

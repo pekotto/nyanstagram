@@ -21,6 +21,7 @@
 		<table class = "table table-hover table-inverse">
 			<thead>
 				<tr class="active">
+					<th>ID</th>
 					<th>猫種</th>
 					<th></th>
 					<th></th>
@@ -29,9 +30,10 @@
 			<tbody>
 				<% @breeds.each do |breed| %>
 					<tr>
+						<td><%= breed.id %></td>
 						<td><%= breed.cat_breed %></td>
-						<td><%= link_to "編集", edit_admin_favorite_breed_path(breed.id), class: "btn btn-success" %></td>
-						<td><%= link_to "削除", edit_admin_favorite_breed_path(breed.id), class: "btn btn-danger" %></td>
+						<td><%= link_to "編集", edit_admin_favorite_breed_path(breed.id) %></td>
+						<td><%= link_to "削除", edit_admin_favorite_breed_path(breed.id) %></td>
 					</tr>
 				<% end %>
 			</tbody>
