@@ -48,7 +48,7 @@
       			<%= fields_for @entry do |e| %>
         			<%= e.hidden_field :user_id, value: @user.id %>
       			<% end %>
-      			<%= f.submit "チャットを始める", class:"btn btn-primary btn-lg user-show-chat"%>
+      			<%= f.submit "DMを送る", class:"btn btn-success btn-sm user-show-chat"%>
     			<% end %>
 
   			<% end %>

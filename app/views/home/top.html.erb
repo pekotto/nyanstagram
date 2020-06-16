@@ -1,42 +1,51 @@
 <div class="top-wrapper">
-	<div class="container">
-        <h1>Welcome to Cat's world</h1>
-        <h1>We love Cats</h1>
-        <p>Welcome to Cat's world!!</p>
-		<p>Welcome to Cat's world!!</p>
+	<div class="top-container">
+    <h1>Cats are irresistible!</h1>
+      <div class="top-message">
+        <h3>The smallest feline is a masterpiece.</h3>
+		    <h4>- Leonardo da Vinci</h4>
+		    <p>猫科の一番小さな動物、つまり猫は、最高傑作である。</p>
+		    <p class="quote">- レオナルド・ダ・ヴィンチ</p><br>
         <div class="btn-wrapper">
-          <a href="#" class="btn btn-top signup">ログインする</a>
-          <p>or sign up with</p>
-          <a href="#" class="btn btn-top facebook">
-          	<span class="fab fa-facebook"></span>
-            Facebookログイン</a>
+          <a href="#" class="btn btn-top signup">
+			     <span class="fas fa-paw"></span>
+          ログインする</a>
+          <p>or</p>
           <a href="#" class="btn btn-top twitter">
-			<span class="fab fa-twitter"></span>
+			     <span class="fab fa-twitter"></span>
           Twitterログイン</a>
         </div>
+      </div>
     </div>
 </div>
 
 
 <div class="lesson-wrapper">
 	<div class="container">
-        <h1>nyanstagram?</h1>
+		<div class="about-menu ">
+        	<h1>What's nyanstagram?</h1>
+        	<div class="about-image col-xs-2">
+				    <%= image_tag 'yokogao2.jpg',class: "about-items" %>
+			    </div>
 
-        <p>Welcome to Cat's world!!</p>
-		<p>Welcome to Cat's world!!</p>
-
+			<div class="about-content col-xs-7 col-xs-offset-2">
+        		<p>nyanstagramは猫好きのための写真投稿サイトです。</p>
+				<p>自慢のウチの子や可愛く撮れた猫の写真が簡単に投稿できます。</p>
+				<p>写真にはコメントができるので、感想を伝えたりいいねもOK。</p>
+          <p>フォローし合うことで、DMでのメッセージ交換もできるので猫友作り</p>
+          <p>にも最適です。</p>
+			</div>
+		</div>
     </div>
 </div>
 
 
-<div class="message-wrapper">
+<div class="welcome-wrapper">
 	<div class="container">
-        <h1>Welcome to Cat's world</h1>
-        <h1>Let's join</h1>
-        <p>Welcome to Cat's world!!</p>
-		<p>Welcome to Cat's world!!</p>
-        <div class="btn-wrapper">
-        	<%= link_to "新規登録はこちら", new_user_registration_path, class: "btn btn-top signup", data: {turbolinks: false } %>
+        <%= image_tag 'top.jpg',class: "welcome-items" %>
+        <h1>猫の魅力をシェアしあおう</h1>
+        <div class="welcome-btn-wrapper">
+        	<%= link_to "新規登録はこちら", new_user_registration_path, class: "btn btn-success", data: {turbolinks: false } %>
         </div>
     </div>
 </div>

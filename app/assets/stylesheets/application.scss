@@ -16,24 +16,49 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+html {
+  height: 100%;
+}
 
-main {
-  margin :50px 0 40px 0;
+body {
+   margin: 0;
+   padding: 0;
+   height: 100%;
+}
+
+#container {
+  position: relative;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
 }
 
 header {
   background-color: #EEEEEE;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #CCCCCC;
+  font-size: 16px;
 }
 
+.nav li a {
+  color: gray;
+}
+
+.navbar-right li a:hover {
+  background-color: #f5f5f5;
+}
+
+main {
+  margin-top: 50px;
+}
+
+
 footer {
-  position: fixed;
-  bottom: 0px;
-  left: 0px;
-  width: 100%;
-  height: 40px;
+  height: 50px;
   background-color: #EEEEEE;
-  border-top: 1px solid black;
+  border-top: 1px solid #CCCCCC;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
 }
 
 footer p {
@@ -41,8 +66,6 @@ footer p {
   margin-top: 10px;
 }
 
-
-/*サイドメニュー設定*/
 .sidemenu {
   margin-top: 100px;
 }
@@ -56,11 +79,10 @@ footer p {
   line-height:1.3em;
 }
 
-/*メニュー項目のブロック全体*/
 .sidemenu ul{
-  margin:0; /*ulタグの領域の外側の余白を0にリセット*/
-  padding:0;  /*ulタグの領域の内側の余白を0にリセット*/
-  list-style:none;  /*メニュー項目先頭の黒丸を消去*/
+  margin:0;
+  padding:0;
+  list-style:none;
 }
 
 .sidemenu li a{
@@ -90,7 +112,6 @@ a {
 
 .nav-menu {
   text-align: center;
-  font-family: "YuGothic";
 }
 
 .fa-paw {
@@ -98,10 +119,25 @@ a {
 }
 
 .form-user {
-  margin: 80px;
+  margin: 60px 0;
+  background: #eeeeee;
+  border: solid 1px #cccccc;
+  border-radius: 30px;
+  padding: 20px 0;
 }
-
 
 .user-wapper {
   background: #f5f5f5;
+}
+
+.actions {
+.btn {
+  width: 150px;
+  margin-left: 30px;
+  }
+}
+
+.logo {
+  width:180px;
+  heght: 50px;
 }
