@@ -10,7 +10,7 @@
 
 .top-container {
   padding-top: 120px;
-  padding-bottom: 200px;
+  padding-bottom: 250px;
   padding-left: 200px;
 }
 
@@ -65,19 +65,18 @@
   background-color: #55acee;
 }
 
-.lesson-wrapper {
- padding-top: 30px;
+.about-wrapper {
  padding-bottom: 180px;
  background-color: #dcdcdc;
  color: gray;
 }
 
-.lesson-wrapper h1 {
+.about-wrapper h1 {
   font-size: 34px;
   font-family: "fantasy";
 }
 
-.lesson-wrapper p {
+.about-wrapper p {
   font-size: 16px;
 }
 
@@ -111,6 +110,10 @@
 
 .message-wrapper p {
   opacity: 0.7;
+}
+
+.about-menu {
+  margin-top: 50px;
 }
 
 .about-items {

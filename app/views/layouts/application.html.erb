@@ -29,9 +29,10 @@
               <li><%= link_to "投稿一覧", admin_users_path, class: "nav-menu", data: {turbolinks: false} %></li>
               <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "nav-menu" %></li>
             <% else %>
-              <li><%= link_to "About", new_user_registration_path, class: "nav-menu", data: {turbolinks: false } %></li>
-              <li><%= link_to "Sign Up", new_user_registration_path, class: "nav-menu", data: {turbolinks: false } %></li>
-              <li><%= link_to "Login", new_user_session_path, class: "nav-menu", data: {turbolinks: false } %></li>
+              <li><%= link_to "Home", root_path, class: "nav-menu", data: {turbolinks: false } %></li>
+              <li><%= link_to "About", home_about_path, class: "nav-menu", data: {turbolinks: false } %></li>
+              <li><%= link_to "Sign up", new_user_registration_path, class: "nav-menu", data: {turbolinks: false } %></li>
+              <li><%= link_to "Log in", new_user_session_path, class: "nav-menu", data: {turbolinks: false } %></li>
             <% end %>
           </ul>
       </div>
