@@ -11,19 +11,19 @@
                     <%= link_to post_path(post),class: "post-list-items" do %>
                             <table class="post-box">
                             	<tr>
-                            		<td>
+                            		<td colspan=2>
                                         <%= attachment_image_tag post.user, :plofile_image, :fill, 25, 25, format: 'jpeg', class: "img-circle pull-left profile-thumb post-icon", fallback: "no_image.jpg" %>
                                         <%= link_to post.user.user_name, user_path(post.user),class: "post-list-items" %>
                                     </td>
                             	</tr>
-                                <tr>
-                                    <td><%= link_to post.title, post_path(post.id),class: "post-list-items" %></td>
-                                </tr>
+
                             	<tr>
-                                	<td><%= attachment_image_tag post, :image, :fill, 230, 180, format: 'jpeg', fallback: "no_image.jpg",class: "post-images" %></td>
+                                	<td colspan=2><%= attachment_image_tag post, :image, :fill, 230, 180, format: 'jpeg', fallback: "no_image.jpg",class: "post-images" %></td>
                                 </tr>
+
                                 <tr>
-                                	<td class="post_<%= post.id %>"><%= render 'posts/likesform', post: post %><%= link_to post.comments.count, post_path(post.id),class: "post-list-items" %>コメント<i class="far fa-comment-dots"></td>
+                                	<td class="post_<%= post.id %>"><%= render 'posts/likesform', post: post %></td>
+                                    <td><%= link_to post.comments.count, post_path(post.id),class: "post-list-items" %>コメント<i class="far fa-comment-dots"></td>
                                 </tr>
                             </table>
                     <% end %>

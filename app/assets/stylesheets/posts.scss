@@ -19,5 +19,36 @@
 }
 
 .post-images {
+  border: solid 1px #dddddd;
   border-radius: 30px;
+}
+
+.post-show-image {
+  border: solid 1px #dddddd;
+  border-radius: 30px;
+}
+
+.box10 {
+    padding: 0.5em 1em;
+    margin: 1em 0;
+    background: #eeeeee;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);
+    height: 150px;
+}
+.box10 p {
+    margin: 0;
+    padding: 0;
+}
+
+.post-info p {
+  margin-left: 15px;
+}
+
+.post-likes {
+  margin-top:10px;
+}
+
+.post-tag p {
+  display: block;
+  margin: 20px;
 }
