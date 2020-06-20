@@ -11,9 +11,11 @@
 			     <span class="fas fa-paw"></span>
           ログインする</a>
           <p>or</p>
-          <a href="#" class="btn btn-top twitter">
-			     <span class="fab fa-twitter"></span>
-          Twitterログイン</a>
+          <%= link_to user_twitter_omniauth_authorize_path do %>
+          <div class="btn btn-top twitter">
+          <i class="fab fa-twitter">Twitterログイン</i>
+        </div>
+          <% end %>
         </div>
       </div>
     </div>

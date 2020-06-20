@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_10_145508) do
+ActiveRecord::Schema.define(version: 2020_06_16_153132) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -144,6 +144,7 @@ ActiveRecord::Schema.define(version: 2020_06_10_145508) do
     t.text "introduction"
     t.integer "favorite_breed_id"
     t.string "provider"
+    t.string "uid"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["favorite_breed_id"], name: "index_users_on_favorite_breed_id"

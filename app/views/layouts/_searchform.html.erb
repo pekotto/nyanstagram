@@ -17,13 +17,21 @@
 	<br>
 	<br>
 
-    <div class="row">
+    <div class="popular">
       <p class="popular-headline" style="display: inline-block; border-bottom: double;">人気ユーザー</p>
     	<div class="popular-box">
       		<% @follow_count_id.each do |user| %>
-            	<ul class="popular-users">
-              		<li class="popular-name"><%= attachment_image_tag @follow_count_user[user], :plofile_image, :fill, 35, 35, format: 'jpeg', class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg" %><%= @follow_count_user[user].user_name %><br>フォロワー<%= @follow_count_user[user].followers.count %></li>
-        		</ul>
+            	<table class="popular-users">
+              		<tr class="popular-name">
+              			<td><%= attachment_image_tag @follow_count_user[user], :plofile_image, :fill, 40, 40, format: 'jpeg', class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg" %>
+              			</td>
+              			<td><p><%= @follow_count_user[user].followers.count %>フォロワー</p></td>
+        			</tr>
+        			<tr>
+        				<td colspan="2"><span class="popular-username"><%= link_to @follow_count_user[user].user_name, user_path(user) %></span>
+        				</td>
+        			</tr>
+        		</table>
       		<% end %>
     	</div>
     </div>

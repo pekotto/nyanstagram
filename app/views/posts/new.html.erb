@@ -22,24 +22,6 @@
   					<%= post.hidden_field :image_cache %>
   					<img id="img_prev" width=400 height=400 src="#" class="img-thumbnail  hidden"/>
   					<%= post.file_field :image, :id => 'post_post_img' %>
-
-  					<script type="text/javascript">
-    					$(function() {
-      					  function readURL(input) {
-        				    if (input.files && input.files[0]) {
-          				      var reader = new FileReader();
-          				      reader.onload = function (e) {
-            					$('#img_prev').attr('src', e.target.result);
-          					  }
-          					  reader.readAsDataURL(input.files[0]);
-        				    }
-      					  }
-      					  $("#post_post_img").change(function() {
-        				    $('#img_prev').removeClass('hidden');
-        				    readURL(this);
-      				      });
-    				    });
-  					</script>
 				</div>
 
 				<p><%= post.check_box :remove_image %>画像を削除する</p>
