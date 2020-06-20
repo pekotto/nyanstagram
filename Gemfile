@@ -69,6 +69,8 @@ gem 'rails-i18n'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'omniauth'
 gem 'omniauth-twitter'
+gem 'rails_admin', '~> 2.0.0.beta'
+gem 'cancancan'
 
 gem 'dotenv-rails'
 group :production do

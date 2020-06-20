@@ -4,32 +4,15 @@
 
 .directmessage-wrapper {
   margin-top: 30px;
+  padding: 20px;
+  background: #eeeeee;
+
 }
 
 .chat-box {
-  width: 100%;
-  margin: 10px 0;
-  overflow: hidden;
-}
-
-.chat-hukidashi {
-  display: inline-block;
-  position: relative;
-  margin: 0 0 0 50px;
-  padding: 10px;
-  max-width: 250px;
-  border-radius: 12px;
-  background: #edf1ee;
-}
-
-.chat-hukidashi:after {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  top: 3px;
-  left: -19px;
-  border: 8px solid transparent;
-  border-right: 18px solid #edf1ee;
-  -webkit-transform: rotate(35deg);
-  transform: rotate(35deg);
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    background: #ffffff;
+    border-bottom: solid 6px #dddddd;
+    border-radius: 9px;
 }

@@ -4,17 +4,19 @@ before_action :configure_permitted_parameters, if: :devise_controller?
 
 
 	def after_sign_up_path_for(resource)
-    if customer_signed_in?
-      	  posts_path
-    elsif admin_signed_in?
-      	  admin_users_path
+    user_signed_in?
+    if current_user.admin == true
+          rails_admin_path
+    else
+          posts_path
     end
 	end
 
 	def after_sign_in_path_for(resource)
-    if admin_signed_in?
-          admin_users_path
-    elsif user_signed_in?
+    user_signed_in?
+    if current_user.admin == true
+          rails_admin_path
+    else
           posts_path
     end
 	end

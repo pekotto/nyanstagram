@@ -1,13 +1,9 @@
 Rails.application.routes.draw do
 
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root 'home#top'
   get 'home/about' => 'home#about'
 
-  devise_for :admins, controllers: {
-   sessions:      'admins/sessions',
-   passwords:     'admins/passwords',
-   registrations: 'admins/registrations'
-  }
 
   devise_for :users, controllers: {
    sessions:      'users/sessions',

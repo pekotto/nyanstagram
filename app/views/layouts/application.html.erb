@@ -22,12 +22,6 @@
               <li><%= link_to "投稿する", new_post_path, class: "nav-menu" %></li>
               <li><%= link_to "マイページ", user_path(current_user.id), class: "nav-menu" %></li>
               <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-menu" %></li>
-            <% elsif admin_signed_in? %>
-            　<li><%= link_to "Home", posts_path, class: "nav-menu" %></li>
-              <li><%= link_to "猫種一覧", admin_favorite_breeds_path, class: "nav-menu" %></li>
-              <li><%= link_to "会員一覧", admin_users_path, class: "nav-menu" %></li>
-              <li><%= link_to "投稿一覧", admin_users_path, class: "nav-menu", data: {turbolinks: false} %></li>
-              <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "nav-menu" %></li>
             <% else %>
               <li><%= link_to "Home", root_path, class: "nav-menu", data: {turbolinks: false } %></li>
               <li><%= link_to "About", home_about_path, class: "nav-menu", data: {turbolinks: false } %></li>
