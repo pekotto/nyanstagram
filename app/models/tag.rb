@@ -4,7 +4,7 @@ class Tag < ApplicationRecord
   has_many :post_tags, dependent: :destroy
   has_many :posts, through: :post_tags
 
-  validates :tag_name, presence: true, uniqueness: true, length: { maximum: 16 }
+  validates :tag_name, presence: true, uniqueness: true, length: { maximum: 20 }
 
     private
     # タグ名を小文字に変換

@@ -20,7 +20,7 @@
 				<div class="post_image_field">
   					<%= image_tag @post.image if @post.image %>
   					<%= post.hidden_field :image_cache %>
-  					<img id="img_prev" width=400 height=400 src="#" class="img-thumbnail  hidden"/>
+  					<img id="img_prev" width=400 height=300 src="#" class="img-thumbnail  hidden"/>
   					<%= post.file_field :image, :id => 'post_post_img' %>
 				</div>
 
@@ -51,7 +51,7 @@
 						<p>Tag:</p>
 					</div>
 					<div class="col-xs-9">
-						<p><%= post.text_area :tag_names, size: "40x1" %></p>
+						<p id="post-tags"><%= post.text_area :tag_names, size: "40x1" %></p>
 					</div>
 				</div>
 

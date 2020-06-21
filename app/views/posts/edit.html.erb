@@ -1,6 +1,6 @@
-<div class="container">
+
 	<div class="row">
-		<div class="col-xs-offset-2 col-xs-8">
+		<div class="col-xs-offset-1 col-xs-8">
 			<h3><span>　投稿編集　</h3></span>
 		</div>
 	</div>
@@ -15,11 +15,13 @@
     			<% end %>
 
 			<div class="col-xs-4 col-xs-offset-1">
-				<p>投稿画像</p>
 
 				<div class="post_image_field">
-					<%= post.attachment_field :image %>
+  					<%= attachment_image_tag @post, :image, class: "image_prev", id: "img_prev" if @post.image %>
+  					<%= post.hidden_field :image_cache %>
+  					<%= post.file_field :image, :id => 'post_post_img' %>
 				</div>
+				<p><%= post.check_box :remove_image %>画像を削除する</p>
 
 			</div>
 
@@ -47,16 +49,16 @@
 						<p>Tag:</p>
 					</div>
 					<div class="col-xs-9">
-						<p><%= post.text_area :tag_names, size: "40x1" %></p>
+						<p id="post-tags"><%= post.text_area :tag_names, size: "20x1" %><span class="tag-message">複数は( , )で区切る</span></p>
+						<%= hidden_field_tag :tag_hidden,@tag_list %>
 					</div>
 				</div>
 
 				<div class="col-xs-12">
-					<div class="col-xs-offset-3 col-xs-3">
+					<div class="col-xs-offset-1 col-xs-3">
 						<%= post.submit '更新', class: "btn btn-primary btn-block" %>
-					<% end %>
 					</div>
 				</div>
 			</div>
+		<% end %>
 	</div>
-</div>

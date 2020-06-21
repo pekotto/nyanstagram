@@ -16,18 +16,20 @@ class Post < ApplicationRecord
       likes.where(user_id: user.id).exists?
  end
 
-  def save_tags(tag_list)
-    tag_list.each do |tag|
-      unless find_tag = Tag.find_by(tag_name: tag.downcase)
-        begin
-          self.tags.create!(tag_name: tag)
-        rescue
-          nil
-        end
-      else
-            # DB にタグが存在した場合、中間テーブルにブログ記事とタグを紐付けている
-        PostTag.create!(post_id: self.id, tag_id: find_tag.id)
-      end
+  def save_tags(tags)
+    current_tags = self.tags.pluck(:tag_name) unless self.tags.nil?
+    old_tags = current_tags - tags
+    new_tags = tags - current_tags
+
+    # Destroy old taggings:
+    old_tags.each do |old_name|
+      self.tags.delete Tag.find_by(tag_name:old_name)
+    end
+
+    # Create new taggings:
+    new_tags.each do |new_name|
+      post_tag = Tag.find_or_create_by(tag_name:new_name)
+      self.tags << post_tag
     end
   end
 

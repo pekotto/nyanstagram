@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
   def index
-  	@posts = Post.order("created_at DESC").page(params[:page]).per(8)
+  	@posts = Post.order("created_at DESC").page(params[:page]).per(20)
     @follow_count_id_hash = Relationship.group(:following_id).order('count_following_id DESC').limit(3).count(:following_id)
     @follow_count_id = @follow_count_id_hash.keys
     @follow_count_user = User.where(id: @follow_count_id).index_by(&:id)
@@ -19,8 +19,8 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id
+    tag_list = tag_params[:tag_names].delete(" ").split(",")
     if @post.save
-      tag_list = tag_params[:tag_names].delete(" ").split(",")
       @post.save_tags(tag_list)
       redirect_to post_path(@post)
     else
@@ -30,18 +30,21 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    @tag_list = @post.tags.pluck(:tag_name).join(",")
   end
 
   def update
     @post = Post.find(params[:id])
+    tag_list = params[:tag_list].split(",")
     @post.update(post_params)
+    @post.save_tags(tag_list)
     redirect_to post_path
   end
 
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to post_path
+    redirect_to posts_path
   end
 
   def like_posts
@@ -92,4 +95,5 @@ class PostsController < ApplicationController
     def tag_params
       params.require(:post).permit(:tag_names)
     end
+
 end
