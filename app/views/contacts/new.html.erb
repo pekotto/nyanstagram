@@ -1,0 +1,19 @@
+<div class="contact-form col-xs-5 col-xs-offset-4">
+	<h3>お問い合わせフォーム</h3>
+
+	<%= form_with model: @contact do |f| %>
+
+  	<div class="form-group">
+    	<%= f.label :email, '返信先メールアドレス' %>
+    	<%= f.text_field :email, class: 'form-control' %>
+  	</div>
+
+ 	<div class="form-group">
+   		<%= f.label :message, 'お問い合わせ内容' %>
+   		<%= f.text_area :message, size: '10x10', class: 'form-control' %>
+ 	</div>
+
+  		<%= f.submit '送信' %>
+
+	<% end %>
+</div>

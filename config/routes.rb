@@ -28,6 +28,9 @@ Rails.application.routes.draw do
 
   resources :relationships, only: [:create, :destroy]
 
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
+  resources :contacts, only: [:new, :create]
+
   get 'posts/like_posts' => 'posts#like_posts'
   get 'posts/following_posts' => 'posts#following_posts'
   get 'posts/follower_posts' => 'posts#follower_posts'

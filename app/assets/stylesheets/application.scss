@@ -59,16 +59,25 @@ footer {
   width: 100%;
   position: fixed;
   bottom: 0;
+  color: gray;
 }
 
 footer p {
-	text-align: center;
-  margin-top: 10px;
+  text-align: right;
+  margin-right: 50px;
+}
+
+.footer-contact a {
+  display: block;
+  text-align: right;
+  margin-right: 100px;
+  color: gray;
 }
 
 .sidemenu {
   margin-top: 100px;
 }
+
 
 .sidemenu h3{
   margin:0 0 7px 0;
@@ -153,4 +162,10 @@ a {
 
 .popular-username {
   margin-left: 5px;
+}
+
+@media screen and (max-width:425px) {
+    .social i {
+        color: blue;
+        }
 }

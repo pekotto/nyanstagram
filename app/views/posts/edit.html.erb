@@ -49,8 +49,7 @@
 						<p>Tag:</p>
 					</div>
 					<div class="col-xs-9">
-						<p id="post-tags"><%= post.text_area :tag_names, size: "20x1" %><span class="tag-message">複数は( , )で区切る</span></p>
-						<%= hidden_field_tag :tag_hidden,@tag_list %>
+						<p id="post-tags"><%= post.text_area :tag_names, value: @post.tags.map(&:tag_name).join(","), size: "20x1" %><span class="tag-message">複数は( , )で区切る</span></p>
 					</div>
 				</div>
 

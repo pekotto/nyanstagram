@@ -19,8 +19,8 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id
-    tag_list = tag_params[:tag_names].delete(" ").split(",")
     if @post.save
+      tag_list = tag_params[:tag_names].delete(" ").split(",")
       @post.save_tags(tag_list)
       redirect_to post_path(@post)
     else
@@ -30,12 +30,11 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
-    @tag_list = @post.tags.pluck(:tag_name).join(",")
   end
 
   def update
     @post = Post.find(params[:id])
-    tag_list = params[:tag_list].split(",")
+    tag_list = tag_params[:tag_names].delete(" ").split(",")
     @post.update(post_params)
     @post.save_tags(tag_list)
     redirect_to post_path
