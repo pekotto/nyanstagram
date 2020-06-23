@@ -13,6 +13,27 @@
   <body>
   <div id="container">
   <header class="nav navbar-fixed-top">
+
+  <div class="el_humburger">
+    <span class="top"></span>
+    <span class="middle"></span>
+    <span class="bottom"></span>
+  </div>
+
+  <div id="navigation" class="navigation">
+    <div class="navigation_screen">
+      <nav class="navigation_wrapper">
+        <div class="navigation_item"><a href ="#">CONTENT</a></div>
+        <div class="navigation_item"><a href ="#">CONTENT</a></div>
+        <div class="navigation_item"><a href ="#">CONTENT</a></div>
+        <div class="navigation_item"><a href ="#">CONTENT</a></div>
+        <div class="navigation_item"><a href ="#">CONTENT</a></div>
+        <div class="navigation_item"><a href ="#">CONTENT</a></div>
+        <div class="navigation_item"><a href ="#">CONTENT</a></div>
+      </nav>
+    </div>
+  </div>
+
     <div class="nav-menu">
         <div class="nav navbar-nav navbar-left">
           <%= link_to image_tag('logo.png', class: "logo"), root_path %>
@@ -38,11 +59,23 @@
     </main>
 
     <footer>
-      <div class="footer-contact">
-        <%= link_to "お問い合わせ ", new_contact_path, class: "footer-contact-logo" %>
+      <div class="footer-default">
+        <div class="footer-contact">
+          <%= link_to "お問い合わせ ", new_contact_path, class: "footer-contact-logo" %>
+        </div>
+        <div class="footer-right">
+          <p>©DMM WEBCAMP, All Right Reserved. </p>
+        </div>
       </div>
-      <div class="footer-right">
-        <p>©DMM WEBCAMP, All Right Reserved. </p>
+
+      <div class="footer-sp">
+        <ul>
+          <li><%= link_to "", posts_path, class: "fas fa-cat fa-2x" %></li>
+          <li><%= link_to "",posts_path, class: "fas fa-search fa-2x" %></li>
+          <li><%= link_to "",new_post_path, class: "far fa-plus-square fa-2x" %></li>
+          <li><%= link_to "",user_path(current_user.id), class: "fas fa-user fa-2x" %></li>
+          <li><%= link_to "",user_path(current_user.id), class: "fas fa-question fa-2x" %></li>
+        </ul>
       </div>
     </footer>
  </div>

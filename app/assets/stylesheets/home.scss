@@ -80,6 +80,23 @@
   font-size: 16px;
 }
 
+.about-menu {
+  margin-top: 50px;
+}
+
+.about-items {
+  width:220px;
+  height:300px;
+  margin-top: 30px;
+  margin-left: 50px;
+  border: solid 1px #cccccc;
+  border-radius: 30px;
+}
+
+.about-content {
+  margin-top: 70px;
+}
+
 .welcome-wrapper {
  padding-top: 50px;
  padding-bottom: 150px;
@@ -100,8 +117,8 @@
   width: 450px;
   height: 300px;
   border-radius: 10%;
-
 }
+
 .message-wrapper h1 {
   opacity: 0.7;
   font-size: 45px;
@@ -112,22 +129,6 @@
   opacity: 0.7;
 }
 
-.about-menu {
-  margin-top: 50px;
-}
-
-.about-items {
-	width:220px;
-	height:300px;
-	margin-top: 30px;
-  margin-left: 50px;
-  border: solid 1px #cccccc;
-  border-radius: 30px;
-}
-
-.about-content {
-	margin-top: 70px;
-}
 
 .nav-menu {
   margin: 0 30px;

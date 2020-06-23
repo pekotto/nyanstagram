@@ -39,6 +39,10 @@ header {
   font-size: 16px;
 }
 
+.navigation {
+  display: none;
+}
+
 .nav li a {
   color: gray;
 }
@@ -165,7 +169,287 @@ a {
 }
 
 @media screen and (max-width:425px) {
-    .social i {
-        color: blue;
-        }
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container-fluid {
+  margin: 0;
+  padding: 0;
+}
+
+/*ハンバーガーボタン*/
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #be9dc9;
+}
+
+.el_humburger {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 26px;
+  height: auto;
+  padding-top: 1px;
+  box-sizing: border-box;
+  z-index: 10000;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.js_humburgerOpen .el_humburger {
+}
+
+.el_humburger > span {
+  display: block;
+  width: 100%;
+  margin: 0 auto 6px;
+  height: 3px;
+  background: #000;
+  transition: all 0.2s ease-in-out;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  .js_humburgerOpen & {
+    background: #000;
+  }
+}
+
+.js_humburgerOpen .el_humburger > span.top {
+  transform: translateY(9px) rotate(-45deg);
+}
+
+.js_humburgerOpen .el_humburger > span.middle {
+  opacity: 0;
+}
+
+.js_humburgerOpen .el_humburger > span.bottom {
+  transform: translateY(-9px) rotate(45deg);
+}
+
+.el_humburgerButton.el_humburgerButton__close {
+  top: 2%;
+  right: 2%;
+}
+
+.el_humburgerButton__close > span {
+  display: block;
+  width: 35px;
+  margin: 0 auto;
+  height: 4px;
+  background: #fff;
+}
+ 
+.el_humburgerButton__close > span.el_humburgerLineTop {
+  transform: translateY(5px) rotate(-45deg);
+}
+ 
+.el_humburgerButton__close > span.el_humburgerLineBottom {
+  transform: translateY(-6px) rotate(45deg);
+}
+ 
+/*ナビゲーション*/
+ 
+.navigation {
+  display: none;
+  &.js_appear {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: block;
+    z-index: 9999;
+  }
+}
+
+.navigation_screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.96);
+  z-index: 0;
+  margin-top: 0px;
+  padding-top: 0px;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.navigation_wrapper {
+  padding: 80px 0 0 0;
+  text-align: center;
+}
+
+.navigation_item {
+  font-ize: 18px;
+  margin-bottom: 20px;
+}
+
+.navigation_item > a {
+  color: #000;
+  text-decoration: none;
+}
+
+.js_fixed {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+.navbar-right {
+  display: none;
+}
+
+/*psフッター*/
+.footer-default {
+  display: none;
+}
+
+.footer-sp {
+  margin: 0px 50px;
+  ul {
+  margin: 0px;
+  }
+}
+
+.footer-sp li {
+  float: left;
+  margin: 10px 0 0 35px;
+  list-style: none;
+}
+
+/*ナビゲーション*/
+.sidemenu {
+  display: none;
+}
+
+
+/*spトップ*/
+.top-wrapper {
+ background-image: image-url("top3.png");
+ background-repeat: no-repeat;
+ background-size: contain;
+ background-position: 0px 450px;
+ background-color: #eeeeee;
+ color: gray;
+}
+
+.top-container {
+  padding-top: 80px;
+  padding-bottom: 280px;
+  padding-left: 20px;
+}
+
+.top-message {
+  padding-left: 15px;
+}
+
+.top-message h4 {
+  padding-left: 13px;
+}
+
+.top-message h3 {
+  font-size: 18px;
+}
+
+.top-wrapper h1 {
+  opacity: 0.7;
+  font-size: 24px;
+}
+
+.top-wrapper p {
+  opacity: 0.7;
+}
+
+.quote {
+  font-size: 13px;
+  padding-left: 80px;
+}
+
+.btn-wrapper {
+  margin-top:20px;
+  margin-left: 100px;
+}
+
+.btn-wrapper p {
+  padding-left: 50px;
+}
+
+.btn-top {
+  padding: 8px 24px;
+  color: white;
+  display: inline-block;
+  opacity: 0.8;
+  border-radius: 4px;
+}
+
+/*spトップアバウト*/
+.about-wrapper h1 {
+  font-size: 24px;
+  font-family: "fantasy";
+}
+
+.about-wrapper p {
+  font-size: 16px;
+}
+
+.about-menu {
+  margin-top: 50px;
+}
+
+.about-items {
+  width:130px;
+  height:150px;
+  margin-top: 30px;
+  margin-left: 50px;
+  border: solid 1px #cccccc;
+  border-radius: 30px;
+}
+
+.about-content {
+  margin-top: 70px;
+}
+
+
+/*spトップウェルカム*/
+.welcome-wrapper {
+ padding-top: 50px;
+ padding-bottom: 150px;
+ background-color: #cccccc;
+ color: gray;
+ text-align: center;
+}
+
+.welcome-wrapper h1 {
+  font-size: 24px;
+}
+
+.welcome-btn-wrapper {
+  margin: 30px;
+}
+
+.welcome-items {
+  width: 300px;
+  height: 240px;
+  border-radius: 10%;
+}
+
+.message-wrapper h1 {
+  opacity: 0.7;
+  font-size: 24px;
+}
+
+.message-wrapper p {
+  opacity: 0.7;
+}
+
 }

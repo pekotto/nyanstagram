@@ -21,6 +21,8 @@
 .post-images {
   border: solid 1px #dddddd;
   border-radius: 30px;
+  width: 240px;
+  height: 180px;
 }
 
 .post-show-image {
@@ -71,4 +73,19 @@
 
 .post-show-wrapper {
   margin-top: 50px;
+}
+
+@media screen and (max-width:425px) {
+
+.post-list {
+  margin: 10px 30px 50px 40px;
+}
+
+.post-images {
+  border: solid 1px #dddddd;
+  border-radius: 30px;
+  width: 320px;
+  height: 240px;
+}
+
 }
