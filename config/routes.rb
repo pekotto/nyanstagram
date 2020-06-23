@@ -42,5 +42,7 @@ Rails.application.routes.draw do
   end
 
   get '/search' => 'search#index', as: 'search'
+  get '/search/index2' => 'search#index2'
+  get '/search/result' => 'search#result'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
