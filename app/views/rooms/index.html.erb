@@ -1,3 +1,4 @@
+<div class="directmessage-index-wrapper col-md-6 col-md-offset-3">
 <h3 class="users-heading">メッセージ一覧</h3>
 <% @anotherEntries.each do |e| %>
 	<div class="users-index-item">
@@ -12,6 +13,8 @@
     			<%= e.user.user_name %><br>
   			<% end %>
     		<%= Message.find_by(id: e.room.message_ids.last).message %><br>
+    		<hr>
   		</div>
 	</div>
 <% end %>
+</div>

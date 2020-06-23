@@ -54,6 +54,11 @@
 		<% end %>
 
       <%= render 'follow_form' %>
+
+      <% if @user.id == current_user.id %>
+        <i class="far fa-envelope"></i><%= link_to "DM一覧", rooms_path,class: "dm-index" %>
+      <% end %>
+
     </div>
 </div>
 
