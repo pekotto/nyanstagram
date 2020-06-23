@@ -23,16 +23,16 @@
   <div id="navigation" class="navigation">
     <div class="navigation_screen">
       <nav class="navigation_wrapper">
-        <div class="navigation_item"><a href ="#">CONTENT</a></div>
-        <div class="navigation_item"><a href ="#">CONTENT</a></div>
-        <div class="navigation_item"><a href ="#">CONTENT</a></div>
-        <div class="navigation_item"><a href ="#">CONTENT</a></div>
-        <div class="navigation_item"><a href ="#">CONTENT</a></div>
-        <div class="navigation_item"><a href ="#">CONTENT</a></div>
-        <div class="navigation_item"><a href ="#">CONTENT</a></div>
+        <div class="navigation_item"><%= link_to "ユーザー", users_path %></div>
+        <div class="navigation_item"><%= link_to "お気に入り", posts_like_posts_path %></div>
+        <div class="navigation_item"><%= link_to "フォロー", posts_following_posts_path %></div>
+        <div class="navigation_item"><%= link_to "フォロワー", posts_follower_posts_path %></div>
+        <div class="navigation_item"><%= link_to "おすすめ", posts_breeds_path %></div>
+        <div class="navigation_item"><%= link_to "お問い合わせ", new_contact_path %></div>
       </nav>
     </div>
   </div>
+
 
     <div class="nav-menu">
         <div class="nav navbar-nav navbar-left">

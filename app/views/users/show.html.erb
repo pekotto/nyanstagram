@@ -1,3 +1,4 @@
+<div class="user-show-wrapper">
 <div class="row">
 	<div class="col-md-4 col-sm-offset-2">
 		<h3>ユーザーページ</h3>
@@ -5,35 +6,34 @@
 </div>
 
 <div class="row">
-	<div class="col-md-4 col-sm-offset-7">
+	<div class="col-sm-4 col-sm-offset-7">
 		<% if @user.id == current_user.id %>
-        	<u><%= link_to "プロフィール編集", edit_user_registration_path(@user) %></u>
+        	<u><%= link_to ">>プロフィール編集", edit_user_registration_path(@user) %></u>
     	<% end %>
 	</div>
 </div>
 
 
 <div class="row">
-	<div class="col-md-2 col-sm-offset-1">
-    <%= attachment_image_tag @user, :plofile_image, :fill, 100, 100, format: 'jpeg', class: "img-circle pull-right profile-show-image", fallback: "no_image.jpg" %>
-	</div>
+<div class="col-md-8 col-md-offset-1">
+	<table class="box6">
+		<tr class="info-menu">
+          <td rowspan="3"><%= attachment_image_tag @user, :plofile_image, format: 'jpeg', class: "img-circle profile-show-image", fallback: "no_image.jpg" %></td>
+    		<td class="info-menu-left">名前</td>
+    		<td><%= @user.user_name %></td>
+    </tr>
 
-	<div class="col-md-6 box6">
-		<div class="col-md-12 info-menu">
-    		<p class="info-menu-left col-md-3">ユーザーネーム</p>
-    		<p class="info-menu-right"><%= @user.user_name %></p>
-    </div>
+		<tr class="info-menu">
+    		<td class="info-menu-left">好きな猫種</td>
+    		<td><%= @user.favorite_breed.cat_breed %></td>
+    </tr>
 
-		<div class="col-md-12 info-menu">
-    		<p class="info-menu-left col-md-3">好きな猫種</p>
-    		<p class="info-menu-right"><%= @user.favorite_breed.cat_breed %></p>
-    </div>
-
-		<div class="col-md-12 info-menu">
-    		<p class="info-menu-left col-md-3">自己紹介</p>
-    		<p class="info-menu-right"><%= @user.introduction %></p>
-    </div>
-  </div>
+		<tr class="info-menu">
+    		<td class="info-menu-left">自己紹介</td>
+    		<td><%= @user.introduction %></td>
+    </tr>
+  </table>
+</div>
 </div>
 
 <div class="row">
@@ -55,9 +55,11 @@
 
       <%= render 'follow_form' %>
 
-      <% if @user.id == current_user.id %>
-        <i class="far fa-envelope"></i><%= link_to "DM一覧", rooms_path,class: "dm-index" %>
-      <% end %>
+      <div class="dm-envelope">
+        <% if @user.id == current_user.id %>
+          <i class="far fa-envelope"></i><%= link_to "DM一覧", rooms_path,class: "dm-index" %>
+        <% end %>
+      </div>
 
     </div>
 </div>
@@ -71,4 +73,5 @@
         <% end %>
 			<% end %>
     </div>
+</div>
 </div>

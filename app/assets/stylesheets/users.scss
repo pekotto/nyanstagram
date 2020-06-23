@@ -2,12 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.info-menu p {
-	display: inline-block;
+.info-menu-left {
+  width: 18%;
 }
 
 .profile-show-image {
   margin-top: 15px;
+  margin-left: 20px;
+  width: 100px;
+  height: 100px;
 }
 
 .show-follow {
@@ -21,10 +24,43 @@
 }
 
 .box6 {
+ margin-top: 30px;
+ margin-left: 30px;
  padding: 1em;
- width: 90%;
- color: #666666;
- background-color: #f7f7f7;
- border: 1px solid #ccc;
- border-radius: 8px;
+ width: 70%;
+}
+
+.dm-envelope {
+ margin-left: 30px;
+}
+
+@media screen and (max-width:425px) {
+.user-show-wrapper {
+  margin: 60px 0;
+  h3 {
+  font-size: 18px;
+  }
+}
+
+.profile-show-image {
+  margin: 0px;
+  padding: 0px;
+  width: 60px;
+  height: 60px;
+}
+
+.box6 {
+ margin: 10px 0 0 10px;
+ padding: 1em;
+ width: 100%;
+}
+
+.info-menu-left {
+  width: 20%;
+}
+
+.dm-envelope {
+ margin-left: 10px;
+}
+
 }

@@ -1,9 +1,9 @@
 <div class="row">
-    <div class="col-xs-3">
+    <div class="col-md-3">
         <%= render 'layouts/searchform' %>
     </div>
 
-    <div class="col-xs-9">
+    <div class="col-md-9">
         <h3>お気に入り</h3>
             <div class="post-list">
                 <% @likes.each do |like| %>
@@ -15,6 +15,6 @@
                 <% end %>
             </div>
 		</div>
-	  <div class="col-xs-offset-6 col-xs-6"><%= paginate(@likes) %></div>
+	  <div class="col-md-offset-6 col-md-6"><%= paginate(@likes) %></div>
     </div>
 </div>

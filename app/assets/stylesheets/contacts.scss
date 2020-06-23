@@ -5,3 +5,10 @@
 .contact-form {
 	margin-top: 20px;
 }
+
+@media screen and (max-width:425px) {
+.contact-form {
+  margin-top: 60px;
+  padding-top: 20px;
+}
+}
