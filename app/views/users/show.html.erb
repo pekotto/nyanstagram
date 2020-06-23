@@ -8,7 +8,7 @@
 <div class="row">
 	<div class="col-sm-4 col-sm-offset-7">
 		<% if @user.id == current_user.id %>
-        	<u><%= link_to ">>プロフィール編集", edit_user_registration_path(@user) %></u>
+        	<u><%= link_to ">>プロフィール編集", edit_user_registration_path(@user), class: "edit_plofile" %></u>
     	<% end %>
 	</div>
 </div>
@@ -69,7 +69,7 @@
 		<h3>投稿一覧</h3>
 			<% @posts.each do |post| %>
         <%= link_to post_path(post),class: "post-show-items" do %>
-				<%= attachment_image_tag post, :image, :fill, 120, 90, format: 'jpeg', fallback: "no_image.jpg", class: "userpost-image" %>
+				<%= attachment_image_tag post, :image, format: 'jpeg', fallback: "no_image.jpg", class: "userpost-image" %>
         <% end %>
 			<% end %>
     </div>

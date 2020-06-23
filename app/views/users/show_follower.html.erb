@@ -1,9 +1,25 @@
- <% @user.followers.each do |user| %>
-<table>
-<tr>
-  <td>  <%= user.user_name %> </td>
-  <td><%= link_to '詳細', user_path(user) %></td>
-</tr>
+<div class="title col-md-offset-4 col-md-8">
+    <div class="index-header">
+        <h3>フォロワー</h3>
+    </div>
 
-</table>
-<% end %>
+      <table class="table table-hover" style="width: 500px;  height: 50px;">
+      	<thead>
+	      <tr class="active">
+	      	<th width="10%"></th>
+	        <th width="10%"></th>
+			<th width="80%"></th>
+	      </tr>
+	    </thead>
+	    <tbody style="background-color: rgba(255, 255, 255, 0.3);">
+	      <% @user.followers.each do |user| %>
+	      <tr>
+	      	<td><%= attachment_image_tag user, :plofile_image, format: 'jpeg', class: "img-circle profile-follow-image", fallback: "no_image.jpg" %></td>
+	      	<td><%= link_to user.user_name, user_path(user), class: "follow-index" %></td>
+	      	<td><p class="follow-index"><%= user.introduction %></p></td>
+	      </tr>
+	      <% end %>
+      	</tbody>
+      </table>
+
+</div>

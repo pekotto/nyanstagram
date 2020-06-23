@@ -315,7 +315,7 @@ a {
 }
 
 .footer-sp {
-  margin: 0px 40px;
+  margin: 0px 20px;
   ul {
   margin: 0px;
   }
@@ -331,125 +331,5 @@ a {
 .sidemenu {
   display: none;
 }
-
-
-/*spトップ*/
-.top-wrapper {
- background-image: image-url("top3.png");
- background-repeat: no-repeat;
- background-size: contain;
- background-position: 0px 450px;
- background-color: #eeeeee;
- color: gray;
 }
 
-.top-container {
-  padding-top: 80px;
-  padding-bottom: 280px;
-  padding-left: 20px;
-}
-
-.top-message {
-  padding-left: 15px;
-}
-
-.top-message h4 {
-  padding-left: 13px;
-}
-
-.top-message h3 {
-  font-size: 18px;
-}
-
-.top-wrapper h1 {
-  opacity: 0.7;
-  font-size: 24px;
-}
-
-.top-wrapper p {
-  opacity: 0.7;
-}
-
-.quote {
-  font-size: 13px;
-  padding-left: 80px;
-}
-
-.btn-wrapper {
-  margin-top:20px;
-  margin-left: 100px;
-}
-
-.btn-wrapper p {
-  padding-left: 50px;
-}
-
-.btn-top {
-  padding: 8px 24px;
-  color: white;
-  display: inline-block;
-  opacity: 0.8;
-  border-radius: 4px;
-}
-
-/*spトップアバウト*/
-.about-wrapper h1 {
-  font-size: 24px;
-  font-family: "fantasy";
-}
-
-.about-wrapper p {
-  font-size: 16px;
-}
-
-.about-menu {
-  margin-top: 50px;
-}
-
-.about-items {
-  width:130px;
-  height:150px;
-  margin-top: 30px;
-  margin-left: 50px;
-  border: solid 1px #cccccc;
-  border-radius: 30px;
-}
-
-.about-content {
-  margin-top: 70px;
-}
-
-
-/*spトップウェルカム*/
-.welcome-wrapper {
- padding-top: 50px;
- padding-bottom: 150px;
- background-color: #cccccc;
- color: gray;
- text-align: center;
-}
-
-.welcome-wrapper h1 {
-  font-size: 24px;
-}
-
-.welcome-btn-wrapper {
-  margin: 30px;
-}
-
-.welcome-items {
-  width: 300px;
-  height: 240px;
-  border-radius: 10%;
-}
-
-.message-wrapper h1 {
-  opacity: 0.7;
-  font-size: 24px;
-}
-
-.message-wrapper p {
-  opacity: 0.7;
-}
-
-}

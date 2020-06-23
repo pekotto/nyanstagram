@@ -18,6 +18,11 @@
   margin: 2px;
 }
 
+.post-profile-image {
+  width: 60px;
+  height: 60px;
+}
+
 .post-images {
   border: solid 1px #dddddd;
   border-radius: 30px;
@@ -28,6 +33,8 @@
 .post-show-image {
   border: solid 1px #dddddd;
   border-radius: 30px;
+  width: 400px;
+  height: 300px;
 }
 
 .box10 {
@@ -37,6 +44,7 @@
     box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);
     height: 150px;
 }
+
 .box10 p {
     margin: 0;
     padding: 0;
@@ -59,6 +67,13 @@
   margin-top:50px
 }
 
+.img_thumbnail {
+  width: 400px;
+  height: 300px;
+  border: solid 1px #dddddd;
+  border-radius: 30px;
+}
+
 .image_prev {
   width: 400px;
   height: 300px;
@@ -75,17 +90,71 @@
   margin-top: 50px;
 }
 
-@media screen and (max-width:425px) {
-
-.post-list {
-  margin: 10px 30px 50px 40px;
+.post-content {
+  width: 400px;
+  height: 200px;
 }
 
-.post-images {
+@media screen and (max-width:425px) {
+.post-show-wrapper {
+  margin-top: 50px;
+  h3 {
+  font-size: 18px;
+  margin: 10px 0 0 40px;
+  }
+  p {
+  margin: 0;
+  }
+}
+
+.post-show-image {
+  margin-top: 30px;
   border: solid 1px #dddddd;
   border-radius: 30px;
   width: 320px;
   height: 240px;
 }
 
+.post-list {
+  margin: 10px 30px 50px 20px;
+}
+
+.post-images {
+  border: solid 1px #dddddd;
+  border-radius: 30px;
+  width: 300px;
+  height: 200px;
+}
+
+.post-tag p {
+  display: block;
+  margin: 0 10px;
+  float: left;
+}
+
+.box10 {
+    padding: 0.5em 1em;
+    margin: 30px 0;
+    background: #eeeeee;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);
+    height: 130px;
+}
+
+.post-profile-image {
+  width: 40px;
+  height: 40px;
+}
+
+.comment_25 {
+  margin-bottom: 80px;
+}
+
+.post-content {
+  width: 300px;
+  height: 200px;
+}
+
+.post-submit {
+  margin-bottom: 80px;
+}
 }

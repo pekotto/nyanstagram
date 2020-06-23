@@ -3,12 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .info-menu-left {
-  width: 18%;
+  width: 15%;
 }
 
 .profile-show-image {
   margin-top: 15px;
-  margin-left: 20px;
+  margin-left: 130px;
   width: 100px;
   height: 100px;
 }
@@ -18,6 +18,8 @@
 }
 
 .userpost-image {
+  width: 110px;
+  height: 90px;
   border: solid 1px #dddddd;
   border-radius: 20px;
   margin: 5px;
@@ -25,13 +27,28 @@
 
 .box6 {
  margin-top: 30px;
- margin-left: 30px;
+ margin-left: 0px;
  padding: 1em;
  width: 70%;
 }
 
 .dm-envelope {
  margin-left: 30px;
+}
+
+.profile-follow-image {
+  width: 40px;
+  height: 40px;
+}
+
+a.follow-index {
+  display: block;
+  margin-top: 10px;
+}
+
+p.follow-index {
+  display: block;
+  margin-top: 10px;
 }
 
 @media screen and (max-width:425px) {
@@ -61,6 +78,15 @@
 
 .dm-envelope {
  margin-left: 10px;
+}
+
+.userpost-image{
+  width: 110px;
+  height: 90px;
+}
+
+a.edit_plofile {
+  margin-left: 220px;
 }
 
 }

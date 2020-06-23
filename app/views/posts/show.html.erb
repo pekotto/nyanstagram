@@ -1,18 +1,18 @@
 <div class="post-show-wrapper">
-	<div class="col-xs-4 col-xs-offset-1">
+	<div class="col-md-4 col-md-offset-1">
 
-		<%= attachment_image_tag @post, :image, :fill, 400, 300, format: 'jpeg', fallback: "no_image.jpg", class: "post-show-image" %>
+		<%= attachment_image_tag @post, :image, format: 'jpeg', fallback: "no_image.jpg", class: "post-show-image" %>
 
 		<h3><%= @post.title %></h3>
 
 
-		<div class="post-likes col-xs-12">
+		<div class="post-likes col-md-12">
 			<div class="post_<%= @post.id %>">
 				<%= render 'posts/likesform', post: @post %>
 			</div>
 		</div>
 
-		<div class="post-tag col-xs-12">
+		<div class="post-tag col-md-12">
 			<% @post.tags.each do |tag| %>
   				<p>#<%= tag.tag_name %></p>
 			<% end %>
@@ -24,24 +24,24 @@
 		<% end %>
   	</div>
 
-	<div class="col-xs-5">
-		<div class="post-info col-xs-2">
-			<%= attachment_image_tag @post.user, :plofile_image, :fill, 60, 60, format: 'jpeg', class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg" %>
+	<div class="col-md-5">
+		<div class="post-info col-md-2">
+			<%= attachment_image_tag @post.user, :plofile_image, format: 'jpeg', class: "img-circle pull-left post-profile-image", fallback: "no_image.jpg" %>
 			<p><%= link_to @post.user.user_name, user_path(@post.user) %></p>
 		</div>
 
-		<div class="box10 col-xs-10">
+		<div class="box10 col-md-10">
 			<p><%= @post.content %></p>
 		</div>
 
-		<div class="post-comment-form col-xs-10 col-xs-offset-2">
+		<div class="post-comment-form col-md-10 col-md-offset-2">
 		<%= form_with model:[@post, @comment], data: {remote: true} do |f| %>
         	<p><%= f.text_area :comment, rows:'2', class: "form-control",placeholder: "コメントをここに" %></p>
     		<%= f.submit "送信", class: "btn btn-sm pull-right" %>
 		<% end %>
 		</div>
 
-		<div class="col-xs-12">
+		<div class="col-md-12">
     		<div class="comment_<%= @post.id %>">
       			<%= render 'posts/comment', comments: @post.comments %>
     		</div>

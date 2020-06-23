@@ -14,13 +14,12 @@
         			</div>
     			<% end %>
 
-			<div class="col-xs-4 col-xs-offset-1">
-				<p>投稿画像</p>
+			<div class="col-md-4 col-md-offset-1">
 
 				<div class="post_image_field">
-  					<%= image_tag @post.image if @post.image %>
+  					<%= image_tag @post.image, class: "new-post-image" if @post.image %>
   					<%= post.hidden_field :image_cache %>
-  					<img id="img_prev" width=400 height=300 src="#" class="img-thumbnail  hidden"/>
+  					<img id="img_prev" width=400 height=300 src="#" class="img_thumbnail  hidden"/>
   					<%= post.file_field :image, :id => 'post_post_img' %>
 				</div>
 
@@ -28,35 +27,35 @@
 			</div>
 
 			<div class="col-md-7">
-				<div class="col-xs-12">
-					<div class="col-xs-1">
+				<div class="col-md-12">
+					<div class="col-md-1">
 						<p>Title:</p>
 					</div>
-					<div class="col-xs-9">
+					<div class="col-md-9">
 						<p><%= post.text_field :title %></p>
 					</div>
 				</div>
 
-				<div class="col-xs-12">
-					<div class="col-xs-1">
+				<div class="col-md-12">
+					<div class="col-md-1">
 						<p>Text:</p>
 					</div>
-					<div class="col-xs-9">
-						<p><%= post.text_area :content, size: "50x10", placeholder: "200字以内" %></p>
+					<div class="col-md-9">
+						<p><%= post.text_area :content, placeholder: "200字以内", class: "post-content" %></p>
 					</div>
 				</div>
 
-				<div class="col-xs-12">
-					<div class="col-xs-1">
+				<div class="col-md-12">
+					<div class="col-md-1">
 						<p>Tag:</p>
 					</div>
-					<div class="col-xs-11">
-						<p id="post-tags"><%= post.text_area :tag_names, size: "20x1" %><span class="tag-message">複数は( , )で区切る</span></p>
+					<div class="col-md-11">
+						<p id="post-tags"><%= post.text_field :tag_names, size: "50x1", placeholder: "20字以内" %><span class="tag-message"> ( , )で区切る</span></p>
 					</div>
 				</div>
 
-				<div class="col-xs-12">
-					<div class="col-xs-offset-3 col-xs-3">
+				<div class="col-md-12">
+					<div class="post-submit col-md-offset-1 col-md-3">
 						<%= post.submit '投稿', class: "btn btn-primary btn-block" %>
 					<% end %>
 					</div>
