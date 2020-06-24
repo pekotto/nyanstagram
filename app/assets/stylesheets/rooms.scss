@@ -1,3 +1,53 @@
 // Place all the styles related to the rooms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.directmessage-wrapper {
+  margin-top: 30px;
+  padding: 20px;
+  background: #eeeeee;
+
+}
+
+.chat-box {
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    background: #ffffff;
+    border-bottom: solid 6px #dddddd;
+    border-radius: 9px;
+}
+
+.form-text-field {
+  width: 600px;
+  height: 80px;
+  border-radius: 9px;
+  margin-left: 5px;
+}
+
+@media screen and (max-width:425px) {
+.directmessage-index-wrapper {
+  margin: 60px 0;
+  padding: 10px;
+}
+
+.directmessage-wrapper {
+  margin: 60px 0;
+  padding: 20px 0;
+  background: #ffffff;
+}
+
+.chat-box {
+   border: solid 1px #dddddd;
+   border-bottom: solid 6px #dddddd;
+   border-radius: 9px;
+}
+
+.form-text-field {
+  width: 370px;
+  height: 70px;
+}
+
+.form-submit {
+  margin-left: 330px;
+}
+}

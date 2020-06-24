@@ -1,21 +1,20 @@
 Rails.application.routes.draw do
 
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root 'home#top'
+  get 'home/about' => 'home#about'
 
-  devise_for :admins, controllers: {
-   sessions:      'admins/sessions',
-   passwords:     'admins/passwords',
-   registrations: 'admins/registrations'
-  }
 
   devise_for :users, controllers: {
    sessions:      'users/sessions',
    passwords:     'users/passwords',
-   registrations: 'users/registrations'
+   registrations: 'users/registrations',
+   omniauth_callbacks: 'users/omniauth_callbacks'
   }
 
  namespace :admin do
     resources :favorite_breeds
+    resources :users
   end
 
   resources :users, only: [:index, :show] do
@@ -25,9 +24,12 @@ Rails.application.routes.draw do
   end
 
   resources :messages, only: [:create]
-  resources :rooms, only: [:create, :show]
+  resources :rooms, only: [:index, :create, :show]
 
   resources :relationships, only: [:create, :destroy]
+
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
+  resources :contacts, only: [:new, :create]
 
   get 'posts/like_posts' => 'posts#like_posts'
   get 'posts/following_posts' => 'posts#following_posts'
@@ -40,5 +42,7 @@ Rails.application.routes.draw do
   end
 
   get '/search' => 'search#index', as: 'search'
+  get '/search/index2' => 'search#index2'
+  get '/search/result' => 'search#result'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

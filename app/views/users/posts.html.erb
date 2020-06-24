@@ -7,31 +7,13 @@
 		<div class="#">
 			<h2>投稿一覧</h2>
             <div class="post-list clearfix">
-
                 <% @posts.each do |post| %>
-                        <%= link_to post_path(post.id) do %>
-                            <table class="post-box" style="width: 230px; height: 250px; margin-bottom: 20px;">
-                            	<tr>
-                            		<td></td>
-                            		<td><%= attachment_image_tag post.user, :plofile_image, :fill, 30, 30, format: 'jpeg', class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg" %><%= link_to post.user.user_name, users_path %></td>
-                                    <td></td>
-                                    <td><%= post.title %></td>
-                            	</tr>
-                            	<tr>
-                                	<td colspan="4"><%= attachment_image_tag post, :image, :fill, 400, 400, format: 'jpeg', fallback: "no_image.jpg" %></td>
-                                </tr>
-                                <tr>
-                                	<td colspan="2"><i class="fas fa-paw" aria-hidden="true"></i>
-                                        <%= post.likes.count %> いいね</td>
-                                	<td></td>
-                                	<td><%= post.content %></td>
-                                </tr>
-                            </table>
-                        <% end %>
+                    <%= link_to post_path(post.id) do %>
+                        <%= render 'post_index', post: post %>
+                    <% end %>
                 <% end %>
             </div>
 		</div>
-
 
 	</div>
 </div>

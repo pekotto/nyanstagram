@@ -16,36 +16,72 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+html {
+  height: 100%;
+}
 
-main {
-  margin :40px 0;
+body {
+   margin: 0;
+   padding: 0;
+   height: 100%;
+}
+
+#container {
+  position: relative;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
 }
 
 header {
   background-color: #EEEEEE;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #CCCCCC;
+  font-size: 16px;
 }
 
+.navigation {
+  display: none;
+}
+
+.nav li a {
+  color: gray;
+}
+
+.navbar-right li a:hover {
+  background-color: #f5f5f5;
+}
+
+main {
+  margin: 50px 0;
+}
+
+
 footer {
-  position: fixed;
-  bottom: 0px;
-  left: 0px;
-  width: 100%;
-  height: 40px;
+  height: 50px;
   background-color: #EEEEEE;
-  border-top: 1px solid black;
+  border-top: 1px solid #CCCCCC;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  color: gray;
 }
 
 footer p {
-	text-align: center;
-  margin-top: 10px;
+  text-align: right;
+  margin-right: 50px;
 }
 
+.footer-contact a {
+  display: block;
+  text-align: right;
+  margin-right: 100px;
+  color: gray;
+}
 
-/*サイドメニュー設定*/
 .sidemenu {
   margin-top: 100px;
 }
+
 
 .sidemenu h3{
   margin:0 0 7px 0;
@@ -56,15 +92,16 @@ footer p {
   line-height:1.3em;
 }
 
-/*メニュー項目のブロック全体*/
 .sidemenu ul{
-  margin:0; /*ulタグの領域の外側の余白を0にリセット*/
-  padding:0;  /*ulタグの領域の内側の余白を0にリセット*/
-  list-style:none;  /*メニュー項目先頭の黒丸を消去*/
+  margin:0;
+  padding:0;
+  list-style:none;
 }
 
 .sidemenu li a{
-  background:url("cat_foot.png") no-repeat 0 6px;
+  background-image: image-url("cat_foot.png");
+  background-repeat: no-repeat;
+  background-position: 0 6px;
   padding:3px 0 3px 18px;
   border-bottom:0px solid #f7b1a6;
   font-size:14px;
@@ -76,7 +113,10 @@ footer p {
 
 .sidemenu li a:hover{
   color:#666666;
-  background:url("cat_foot.png") no-repeat 0 6px #DDDDDD;
+  background-image: image-url("cat_foot.png");
+  background-repeat: no-repeat;
+  background-color: #eeeeee;
+  background-position: 0 6px;
 }
 
 a {
@@ -90,9 +130,206 @@ a {
 
 .nav-menu {
   text-align: center;
-  font-family: "YuGothic";
 }
 
 .fa-paw {
   margin-left: 5px;
 }
+
+.form-user {
+  margin: 60px 0;
+  background: #eeeeee;
+  border: solid 1px #cccccc;
+  border-radius: 30px;
+  padding: 20px 0;
+}
+
+.user-wapper {
+  background: #f5f5f5;
+}
+
+.actions {
+.btn {
+  width: 150px;
+  margin-left: 30px;
+  }
+}
+
+.logo {
+  width:180px;
+  heght: 50px;
+}
+
+.popular-box p {
+  margin: 10px;
+}
+
+.popular-username {
+  margin-left: 5px;
+}
+
+@media screen and (max-width:425px) {
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container-fluid {
+  margin: 0;
+  padding: 0;
+}
+
+/*ハンバーガーボタン*/
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #be9dc9;
+}
+
+.el_humburger {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 26px;
+  height: auto;
+  padding-top: 1px;
+  box-sizing: border-box;
+  z-index: 10000;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.js_humburgerOpen .el_humburger {
+}
+
+.el_humburger > span {
+  display: block;
+  width: 100%;
+  margin: 0 auto 6px;
+  height: 3px;
+  background: #000;
+  transition: all 0.2s ease-in-out;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  .js_humburgerOpen & {
+    background: #000;
+  }
+}
+
+.js_humburgerOpen .el_humburger > span.top {
+  transform: translateY(9px) rotate(-45deg);
+}
+
+.js_humburgerOpen .el_humburger > span.middle {
+  opacity: 0;
+}
+
+.js_humburgerOpen .el_humburger > span.bottom {
+  transform: translateY(-9px) rotate(45deg);
+}
+
+.el_humburgerButton.el_humburgerButton__close {
+  top: 2%;
+  right: 2%;
+}
+
+.el_humburgerButton__close > span {
+  display: block;
+  width: 35px;
+  margin: 0 auto;
+  height: 4px;
+  background: #fff;
+}
+ 
+.el_humburgerButton__close > span.el_humburgerLineTop {
+  transform: translateY(5px) rotate(-45deg);
+}
+ 
+.el_humburgerButton__close > span.el_humburgerLineBottom {
+  transform: translateY(-6px) rotate(45deg);
+}
+ 
+/*ナビゲーション*/
+ 
+.navigation {
+  display: none;
+  &.js_appear {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: block;
+    z-index: 9999;
+  }
+}
+
+.navigation_screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.96);
+  z-index: 0;
+  margin-top: 0px;
+  padding-top: 0px;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.navigation_wrapper {
+  padding: 80px 0 0 0;
+  text-align: center;
+}
+
+.navigation_item {
+  font-ize: 18px;
+  margin-bottom: 20px;
+}
+
+.navigation_item > a {
+  color: #000;
+  text-decoration: none;
+}
+
+.js_fixed {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+.navbar-right {
+  display: none;
+}
+
+/*psフッター*/
+.footer-default {
+  display: none;
+}
+
+.footer-sp {
+  margin: 0px 20px;
+  ul {
+  margin: 0px;
+  }
+}
+
+.footer-sp li {
+  float: left;
+  margin: 10px 20px 0 20px;
+  list-style: none;
+}
+
+/*ナビゲーション*/
+.sidemenu {
+  display: none;
+}
+}
+
