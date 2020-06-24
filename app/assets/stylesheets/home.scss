@@ -2,37 +2,49 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.container {
-  width: 1170px;
-  padding: 0 15px;
-  margin: 0 auto;
-}
-
-
-/* top-wrapperクラスのCSSを指定してください */
 .top-wrapper {
- padding-top: 120px;
- padding-bottom: 150px;
- background-image: image-url("top5.png");
+ background-image: image-url("top22.png");
  background-size: cover;
  color: gray;
- text-align: left;
 }
 
-/* top-wrapperの中の<h1>のCSSを指定してください */
+.top-container {
+  padding-top: 120px;
+  padding-bottom: 250px;
+  padding-left: 200px;
+}
+
+.top-message {
+  padding-left: 20px;
+}
+
+.top-message h4 {
+  padding-left: 200px;
+}
+
 .top-wrapper h1 {
   opacity: 0.7;
-  font-size: 45px;
-
+  font-size: 48px;
 }
 
-
-/* top-wrapperの中の<p>のCSSを指定してください */
 .top-wrapper p {
   opacity: 0.7;
 }
 
-/* btnクラスのCSSを指定してください */
+.quote {
+  font-size: 13px;
+  padding-left: 200px;
+}
+
+.btn-wrapper {
+  margin-top:20px;
+  margin-left: 100px;
+}
+
+.btn-wrapper p {
+  padding-left: 50px;
+}
+
 .btn-top {
   padding: 8px 24px;
   color: white;
@@ -45,80 +57,221 @@
   opacity: 1;
 }
 
-/* signupクラスのCSSを指定してください */
 .signup {
-  background-color: #239b76;
+  background-color: gray;
 }
 
-
-/* facebookクラスのCSSを指定してください */
-.facebook {
-  background-color: #3b5998;
-  margin-right: 10px;
-}
-
-
-/* twitterクラスのCSSを指定してください */
 .twitter {
   background-color: #55acee;
 }
 
-
-/* btn-wrapperクラスのCSSを指定してください */
-.btn-wrapper {
-  margin: 20px 0;
+.about-wrapper {
+ padding-bottom: 180px;
+ background-color: #dcdcdc;
+ color: gray;
 }
 
-
-/* btn-wrapperクラスの中にある<p>のCSSを指定してください */
-.btn-wrapper p {
-  margin: 10px 0;
+.about-wrapper h1 {
+  font-size: 34px;
+  font-family: "fantasy";
 }
 
-.signup {
-  margin-left: 80px;
+.about-wrapper p {
+  font-size: 16px;
 }
 
-/* lesson-wrapperクラスのCSSを指定してください */
-.lesson-wrapper {
- padding-top: 120px;
+.about-menu {
+  margin-top: 50px;
+}
+
+.about-items {
+  width:220px;
+  height:300px;
+  margin-top: 30px;
+  margin-left: 50px;
+  border: solid 1px #cccccc;
+  border-radius: 30px;
+}
+
+.about-content {
+  margin-top: 70px;
+  margin-left: 0px;
+  width: 470px;
+  height: 200px;
+}
+
+.welcome-wrapper {
+ padding-top: 50px;
  padding-bottom: 150px;
- background-color: #eeeeee;
+ background-color: #cccccc;
  color: gray;
  text-align: center;
 }
 
-/* lesson-wrapperの中の<h1>のCSSを指定してください */
-.lesson-wrapper h1 {
-  opacity: 0.7;
-  font-size: 45px;
-
+.welcome-wrapper h1 {
+  font-size: 36px;
 }
 
-
-/* lesson-wrapperの中の<p>のCSSを指定してください */
-.lesson-wrapper p {
-  opacity: 0.7;
+.welcome-btn-wrapper {
+  margin: 30px;
 }
 
-/* message-wrapperクラスのCSSを指定してください */
-.message-wrapper {
- padding-top: 120px;
- padding-bottom: 150px;
- background-color: #eeeeee;
- color: gray;
- text-align: center;
+.welcome-items {
+  width: 450px;
+  height: 300px;
+  border-radius: 10%;
 }
 
-/* message-wrapperの中の<h1>のCSSを指定してください */
 .message-wrapper h1 {
   opacity: 0.7;
   font-size: 45px;
 
 }
 
-
-/* message-wrapperの中の<p>のCSSを指定してください */
 .message-wrapper p {
   opacity: 0.7;
+}
+
+
+.nav-menu {
+  margin: 0 30px;
+}
+
+@media screen and (max-width:425px) {
+
+/*spトップ*/
+.top-wrapper {
+ background-image: image-url("top3.png");
+ background-repeat: no-repeat;
+ background-size: contain;
+ background-position: 0px 400px;
+ background-color: #eeeeee;
+ color: gray;
+}
+
+.top-container {
+  padding-top: 70px;
+  padding-bottom: 240px;
+  padding-left: 20px;
+}
+
+.top-message {
+  padding-left: 10px;
+}
+
+.top-message h4 {
+  padding-left: 130px;
+}
+
+.top-message h3 {
+  font-size: 18px;
+}
+
+.top-wrapper h1 {
+  opacity: 0.7;
+  font-size: 24px;
+}
+
+.top-wrapper p {
+  opacity: 0.7;
+  font-size: 11px;
+}
+
+.quote {
+  font-size: 13px;
+  padding-left: 130px;
+}
+
+.btn-wrapper {
+  margin-top:10px;
+  margin-left: 90px;
+}
+
+.btn-wrapper p {
+  padding-left: 60px;
+  font-size: 16px;
+}
+
+.btn-top {
+  padding: 8px 24px;
+  color: white;
+  display: inline-block;
+  opacity: 0.8;
+  border-radius: 4px;
+}
+
+/*spトップアバウト*/
+.about-wrapper {
+ padding-bottom: 0;
+}
+
+.about-wrapper h1 {
+  font-size: 18px;
+  font-family: "fantasy";
+  margin-left: 80px;
+}
+
+.about-wrapper p {
+  font-size: 16px;
+}
+
+.about-menu {
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.about-items {
+  width:150px;
+  height:200px;
+  margin-top: 20px;
+  margin-left: 80px;
+  border: solid 1px #cccccc;
+  border-radius: 30px;
+}
+
+.about-content {
+  margin: 0;
+  margin-left: 0px;
+  margin-top: 0;
+  width: 300px;
+  height: 300px;
+}
+
+.about-content p {
+  margin: 10px;
+}
+
+/*spトップウェルカム*/
+.welcome-wrapper {
+ padding-top: 50px;
+ padding-bottom: 250px;
+ background-color: #cccccc;
+ color: gray;
+ text-align: center;
+}
+
+.welcome-wrapper h1 {
+  font-size: 24px;
+}
+
+.welcome-btn-wrapper {
+  margin: 30px;
+}
+
+.welcome-items {
+  width: 240px;
+  height: 180px;
+  border-radius: 10%;
+}
+
+.message-wrapper h1 {
+  opacity: 0.7;
+  font-size: 24px;
+}
+
+.message-wrapper p {
+  opacity: 0.7;
+}
+
+
 }

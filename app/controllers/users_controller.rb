@@ -1,10 +1,9 @@
 class UsersController < ApplicationController
 
   def index
-    @posts = current_user.posts.all.order("created_at DESC").page(params[:page]).per(8)
-        @follow_count_id_hash = Relationship.group(:following_id).order('count_following_id DESC').limit(5).count(:following_id)
+    @posts = current_user.posts.all.order("created_at DESC").page(params[:page]).per(20)
+    @follow_count_id_hash = Relationship.group(:following_id).order('count_following_id DESC').limit(3).count(:following_id)
     @follow_count_id = @follow_count_id_hash.keys
-
     #フォロワー順にユーザーを取得する
     @follow_count_user = User.where(id: @follow_count_id).index_by(&:id)
   end

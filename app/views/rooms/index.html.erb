@@ -1,0 +1,20 @@
+<div class="directmessage-index-wrapper col-md-6 col-md-offset-3">
+<h3 class="users-heading">メッセージ一覧</h3>
+<% @anotherEntries.each do |e| %>
+	<div class="users-index-item">
+  		<div class="user-left">
+  			<%= link_to room_path(e.room.id) do %>
+        	<%= attachment_image_tag e.user, :plofile_image, :fill, 40, 40, format: 'jpeg', class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg" %>
+  			<% end %>
+  		</div>
+
+  		<div class="user-right">
+  			<%= link_to room_path(e.room.id) do %>
+    			<%= e.user.user_name %><br>
+  			<% end %>
+    		<%= Message.find_by(id: e.room.message_ids.last).message %><br>
+    		<hr>
+  		</div>
+	</div>
+<% end %>
+</div>

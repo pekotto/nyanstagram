@@ -1,39 +1,20 @@
 <div class="row">
-	<div class="col-xs-3">
+	<div class="col-md-3">
         <%= render 'layouts/searchform' %>
 	</div>
 
-	<div class="col-xs-9">
+	<div class="col-md-9">
 		<h3>投稿一覧</h3>
             <div class="post-list">
 
                 <% @posts.each do |post| %>
                     <%= link_to post_path(post),class: "post-list-items" do %>
-                            <table class="post-box">
-                            	<tr>
-                            		<td>
-                                        <%= attachment_image_tag post.user, :plofile_image, :fill, 20, 20, format: 'jpeg', class: "img-circle pull-left profile-thumb post-icon", fallback: "no_image.jpg" %>
-                                        <%= link_to post.user.user_name, user_path(post.user),class: "post-list-items" %>
-                                    </td>
-                            	</tr>
-                                <tr>
-                                    <td align="center"><%= link_to post.title, post_path(post.id),class: "post-list-items" %></td>
-                                </tr>
-                            	<tr>
-                                	<td><%= attachment_image_tag post, :image, :fill, 200, 160, format: 'jpeg', fallback: "no_image.jpg" %></td>
-                                </tr>
-                                <tr>
-                                	<td class="post_<%= post.id %>"><%= render 'posts/likesform', post: post %></td>
-                                </tr>
-                                <tr>
-                                    <td align="right"><%= link_to post.comments.count, post_path(post.id),class: "post-list-items" %>コメント<i class="far fa-comment-dots"></i></td>
-                                </tr>
-                            </table>
+                        <%= render 'post_index', post: post %>
                     <% end %>
                 <% end %>
 
             </div>
-		<div class="col-xs-offset-6 col-xs-6"><%= paginate @posts %></div>
+		<div class="col-md-offset-6 col-md-6"><%= paginate @posts %></div>
 	</div>
 </div>
 

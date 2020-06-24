@@ -4,43 +4,83 @@
     <title>Nyanstagram</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-
+  <div id="container">
   <header class="nav navbar-fixed-top">
-      <div class="container-fluid">
+
+  <div class="el_humburger">
+    <span class="top"></span>
+    <span class="middle"></span>
+    <span class="bottom"></span>
+  </div>
+
+  <div id="navigation" class="navigation">
+    <div class="navigation_screen">
+      <nav class="navigation_wrapper">
+        <div class="navigation_item"><%= link_to "ユーザー", users_path %></div>
+        <div class="navigation_item"><%= link_to "お気に入り", posts_like_posts_path %></div>
+        <div class="navigation_item"><%= link_to "フォロー", posts_following_posts_path %></div>
+        <div class="navigation_item"><%= link_to "フォロワー", posts_follower_posts_path %></div>
+        <div class="navigation_item"><%= link_to "おすすめ", posts_breeds_path %></div>
+        <div class="navigation_item"><%= link_to "お問い合わせ", new_contact_path %></div>
+      </nav>
+    </div>
+  </div>
+
+
+    <div class="nav-menu">
+        <div class="nav navbar-nav navbar-left">
+          <%= link_to image_tag('logo.png', class: "logo"), root_path %>
+        </div>
           <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
               <li><%= link_to "Top", posts_path, class: "nav-menu" %></li>
               <li><%= link_to "投稿する", new_post_path, class: "nav-menu" %></li>
               <li><%= link_to "マイページ", user_path(current_user.id), class: "nav-menu" %></li>
               <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-menu" %></li>
-            <% elsif admin_signed_in? %>
-            　<li><%= link_to "Top", posts_path, class: "nav-menu" %></li>
-              <li><%= link_to "猫種一覧", admin_favorite_breeds_path, class: "nav-menu" %></li>
-              <li><%= link_to "会員一覧", admin_users_path, class: "nav-menu" %></li>
-              <li><%= link_to "投稿一覧", admin_users_path, class: "nav-menu", data: {turbolinks: false} %></li>
-              <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "nav-menu" %></li>
             <% else %>
-              <li><%= link_to "新規登録", new_user_registration_path, class: "nav-menu", data: {turbolinks: false } %></li>
-              <li><%= link_to "ログイン", new_user_session_path, class: "nav-menu", data: {turbolinks: false } %></li>
+              <li><%= link_to "Home", root_path, class: "nav-menu", data: {turbolinks: false } %></li>
+              <li><%= link_to "About", home_about_path, class: "nav-menu", data: {turbolinks: false } %></li>
+              <li><%= link_to "Sign up", new_user_registration_path, class: "nav-menu", data: {turbolinks: false } %></li>
+              <li><%= link_to "Log in", new_user_session_path, class: "nav-menu", data: {turbolinks: false } %></li>
             <% end %>
           </ul>
       </div>
     </header>
 
-    <main>
+    <main class="container-fluid body">
       <%= yield %>
     </main>
 
     <footer>
-      <p>©DMM WEBCAMP, All Right Reserved.</p>
-    </footer>
+      <div class="footer-default">
+        <div class="footer-contact">
+          <%= link_to "お問い合わせ ", new_contact_path, class: "footer-contact-logo" %>
+        </div>
+        <div class="footer-right">
+          <p>©DMM WEBCAMP, All Right Reserved. </p>
+        </div>
+      </div>
 
+    <% if user_signed_in? %>
+      <div class="footer-sp">
+        <ul>
+          <li><%= link_to "", posts_path, class: "fas fa-cat fa-2x" %></li>
+          <li><%= link_to "",search_index2_path, class: "fas fa-search fa-2x" %></li>
+          <li><%= link_to "",new_post_path, class: "far fa-plus-square fa-2x" %></li>
+          <li><%= link_to "",user_path(current_user.id), class: "fas fa-user fa-2x" %></li>
+          <li><%= link_to "",rooms_path, class: "far fa-envelope fa-2x" %></li>
+        </ul>
+      </div>
+    <% end %>
+    </footer>
+ </div>
   </body>
 
 </html>
