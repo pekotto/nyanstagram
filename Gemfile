@@ -76,6 +76,7 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'rails_admin', '~> 2.0.0.beta'
 gem 'cancancan'
+gem 'rubocop-airbnb'
 
 gem 'dotenv-rails'
 group :production do
