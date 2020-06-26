@@ -7,7 +7,9 @@
                         <div class="avatar col-xs-12">
                             <%= attachment_image_tag comment.user, :plofile_image, :fill, 40, 40, format: 'jpeg', class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg" %>
                             <%= comment.comment %>
+                            <% if comment.user == current_user %>
                             <%= link_to "削除", post_comments_path(comment), method: :delete, remote: true %>
+                            <% end %>
                         </div>
                     </div>
                     <div class="comment-text">
