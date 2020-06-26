@@ -23,15 +23,14 @@
       		<% @follow_count_id.each do |user| %>
             	<table class="popular-users">
               		<tr class="popular-name">
-              			<td><%= attachment_image_tag @follow_count_user[user], :plofile_image, :fill, 40, 40, format: 'jpeg', class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg" %>
+              			<td rowspan="2"><%= attachment_image_tag @follow_count_user[user], :plofile_image, :fill, 40, 40, format: 'jpeg', class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg" %>
               			</td>
-              			<td><p><%= @follow_count_user[user].followers.count %>フォロワー</p></td>
-        			</tr>
-        			<tr>
-        				<td colspan="2"><span class="popular-username"><%= link_to @follow_count_user[user].user_name, user_path(user) %></span>
-        				</td>
-        			</tr>
-        		</table>
+              			<td><p><span class="popular-username"><%= link_to @follow_count_user[user].user_name, user_path(user) %></span></td>
+        			    </tr>
+        			    <tr>
+                    <td><p><%= @follow_count_user[user].followers.count %>フォロワー</p></td>
+        			    </tr>
+        		  </table>
       		<% end %>
     	</div>
     </div>

@@ -12,11 +12,6 @@ Rails.application.routes.draw do
    omniauth_callbacks: 'users/omniauth_callbacks'
   }
 
- namespace :admin do
-    resources :favorite_breeds
-    resources :users
-  end
-
   resources :users, only: [:index, :show] do
     member do
       get :following, :followers
