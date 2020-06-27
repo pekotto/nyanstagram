@@ -57,7 +57,7 @@ main {
 
 .container-fluid {
   margin: 50px 0 0 0;
-  padding: 0;
+  padding: 0 0 50px 0;
 }
 
 footer {
@@ -150,6 +150,12 @@ a {
 
 .user-wapper {
   background: #f5f5f5;
+  padding-bottom: 120px;
+}
+
+.user-session-wapper {
+  background: #f5f5f5;
+  padding-bottom: 260px;
 }
 
 .actions {
