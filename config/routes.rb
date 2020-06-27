@@ -12,10 +12,6 @@ Rails.application.routes.draw do
    omniauth_callbacks: 'users/omniauth_callbacks'
   }
 
- namespace :admin do
-    resources :favorite_breeds
-    resources :users
-  end
 
   resources :users, only: [:index, :show] do
     member do
@@ -25,10 +21,7 @@ Rails.application.routes.draw do
 
   resources :messages, only: [:create]
   resources :rooms, only: [:index, :create, :show]
-
   resources :relationships, only: [:create, :destroy]
-
-  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
   resources :contacts, only: [:new, :create]
 
   get 'posts/like_posts' => 'posts#like_posts'
