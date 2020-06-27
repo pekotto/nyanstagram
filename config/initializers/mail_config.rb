@@ -6,5 +6,5 @@
   	user_name: ENV['MAIL'],
   	password: ENV['MAIL_PASSWORD'],
   	authentication: 'plain',
-  	enable_starttls_auto: true
+  	#enable_starttls_auto: true
 	}
