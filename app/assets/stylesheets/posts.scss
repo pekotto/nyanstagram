@@ -112,6 +112,13 @@
   }
 }
 
+.img_thumbnail {
+  width: 320px;
+  height: 280px;
+  border: solid 1px #dddddd;
+  border-radius: 30px;
+}
+
 .post-show-image {
   margin-top: 30px;
   border: solid 1px #dddddd;
@@ -162,4 +169,5 @@
 .post-submit {
   margin-bottom: 80px;
 }
+
 }

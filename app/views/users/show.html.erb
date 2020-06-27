@@ -19,13 +19,18 @@
 	<table class="box6">
 		<tr class="info-menu">
           <td rowspan="3"><%= attachment_image_tag @user, :plofile_image, format: 'jpeg', class: "img-circle profile-show-image", fallback: "no_image.jpg" %></td>
-    		<td class="info-menu-left">名前</td>
+    		<td class="info-menu-left">名前</td>s
     		<td><%= @user.user_name %></td>
     </tr>
 
 		<tr class="info-menu">
     		<td class="info-menu-left">好きな猫種</td>
-    		<td><%= @user.favorite_breed.cat_breed %></td>
+    		<td><% if @user.favorite_breed == nil %>
+              <%= "選択してください" %>
+            <% else %>
+               <%= @user.favorite_breed.cat_breed %>
+            <% end %>
+        </td>
     </tr>
 
 		<tr class="info-menu">
