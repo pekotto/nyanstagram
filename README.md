@@ -20,6 +20,9 @@
 猫の写真を見たい時、写真をシェアしたい時、同じ猫好きと交流したい時
 
 ## 設計書
-
+### ER図
+https://drive.google.com/file/d/1bn8hK1NXEJj7Vpe4ENdOVsviaLH5-7AX/view?usp=sharing
 ### 機能一覧
+https://docs.google.com/spreadsheets/d/1CpjsZNriZIr_J3VGvPAIe-dfSW9qiuuyiB989E41dDI/edit?usp=sharing
+### 要素一覧
 https://docs.google.com/spreadsheets/d/1Pjw0va_QoGgPOCAtObtuWRBEfR1MxP0UJNhgJrDYFoQ/edit?usp=sharing
