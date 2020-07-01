@@ -20,10 +20,7 @@ Rails.application.routes.draw do
 
   resources :messages, only: [:create]
   resources :rooms, only: [:index, :create, :show]
-
   resources :relationships, only: [:create, :destroy]
-
-  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
   resources :contacts, only: [:new, :create]
 
   get 'posts/like_posts' => 'posts#like_posts'

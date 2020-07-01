@@ -1,7 +1,9 @@
 <table class="post-box">
     <tr>
         <td colspan=2>
-            <%= attachment_image_tag post.user, :plofile_image, :fill, 25, 25, format: 'jpeg', class: "img-circle pull-left profile-thumb post-icon", fallback: "no_image.jpg" %>
+            <%= link_to user_path(post.user),class: "post-list-items" do %>
+                <%= attachment_image_tag post.user, :plofile_image, :fill, 30, 30, format: 'jpeg', class: "img-circle pull-left profile-thumb post-icon", fallback: "no_image.jpg" %>
+             <% end %>
             <%= link_to post.user.user_name, user_path(post.user),class: "post-list-items" %>
         </td>
     </tr>

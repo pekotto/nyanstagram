@@ -25,7 +25,12 @@
 
 		<tr class="info-menu">
     		<td class="info-menu-left">好きな猫種</td>
-    		<td><%= @user.favorite_breed.cat_breed %></td>
+    		<td><% if @user.favorite_breed == nil %>
+              <%= "選択してください" %>
+            <% else %>
+               <%= @user.favorite_breed.cat_breed %>
+            <% end %>
+        </td>
     </tr>
 
 		<tr class="info-menu">
@@ -40,6 +45,8 @@
     <div class="col-md-2 col-sm-offset-2 show-follow">
       <%= render 'stats' %>
 
+      <%= render 'follow_form' %>
+
 		<% unless @user.id == current_user.id %>
   			<% if @isRoom == true %>
     			<p class="user-show-room"><a href="/rooms/<%= @roomId %>" class="far fa-envelope">DMを送る</a></p>
@@ -48,12 +55,10 @@
       			<%= fields_for @entry do |e| %>
         			<%= e.hidden_field :user_id, value: @user.id %>
       			<% end %>
-      			<%= f.submit "DMを送る", class:"btn btn-success btn-sm user-show-chat"%>
+      			<%= f.submit "DMを送る", class:"user-show-chat"%>
     			<% end %>
   			<% end %>
 		<% end %>
-
-      <%= render 'follow_form' %>
 
       <div class="dm-envelope">
         <% if @user.id == current_user.id %>

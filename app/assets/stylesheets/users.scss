@@ -51,9 +51,13 @@ p.follow-index {
   margin-top: 10px;
 }
 
+#follow_form {
+  margin-bottom: 5px;
+}
+
 @media screen and (max-width:425px) {
 .user-show-wrapper {
-  margin: 60px 0;
+  margin: 10px 10px;
   h3 {
   font-size: 18px;
   }

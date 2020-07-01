@@ -26,7 +26,7 @@
 				<p><%= post.check_box :remove_image %>画像を削除する</p>
 			</div>
 
-			<div class="col-md-7">
+			<div class="col-md-7 new-post-left">
 				<div class="col-md-12">
 					<div class="col-md-1">
 						<p>Title:</p>
@@ -50,7 +50,7 @@
 						<p>Tag:</p>
 					</div>
 					<div class="col-md-11">
-						<p id="post-tags"><%= post.text_field :tag_names, size: "50x1", placeholder: "20字以内" %><span class="tag-message"> ( , )で区切る</span></p>
+						<p id="post-tags"><%= post.text_field :tag_names, class: "post-tag-input", placeholder: "20字以内" %><span class="tag-message"> ( , )で区切る</span></p>
 					</div>
 				</div>
 
