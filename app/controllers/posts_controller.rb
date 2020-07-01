@@ -23,6 +23,10 @@ class PostsController < ApplicationController
     if @post.save
       tag_list = tag_params[:tag_names].delete(" ").split(",")
       @post.save_tags(tag_list)
+      vtags = Vision.get_image_data(@post.image)
+      vtags.each do |t|
+        @post.tags.create(tag_name: t)
+      end
       redirect_to post_path(@post)
     else
         render :new
