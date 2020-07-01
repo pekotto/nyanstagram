@@ -17,9 +17,10 @@ class User < ApplicationRecord
   attachment :plofile_image, destroy: false
   belongs_to :favorite_breed
 
-  validates :name, length: {maximum: 20, minimum: 2}
-  validates :user_name, length: {maximum: 20, minimum: 1}
+  validates :name, presence: true, length: {maximum: 20, minimum: 2}
+  validates :user_name, presence: true, length: {maximum: 20, minimum: 1}
   validates :introduction, length: {maximum: 50}
+  validates :favorite_breed, presence: true
 
   def following?(other_user)
     following_relationships.find_by(following_id: other_user.id)

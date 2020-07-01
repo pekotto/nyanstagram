@@ -12,7 +12,6 @@ Rails.application.routes.draw do
    omniauth_callbacks: 'users/omniauth_callbacks'
   }
 
-
   resources :users, only: [:index, :show] do
     member do
       get :following, :followers
