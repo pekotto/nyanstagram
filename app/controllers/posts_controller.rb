@@ -22,7 +22,15 @@ class PostsController < ApplicationController
     @post.user_id = current_user.id
     if @post.save
       tag_list = tag_params[:tag_names].delete(" ").split(",")
-      @post.save_tags(tag_list)
+      tags = Vision.get_image_data(@post.image)
+      @post.save_tags(tag_list + tags)
+      # tags.each do |tag|
+      #   begin
+      #     @post.tags.create(tag_name: tag)
+      #   rescue => e
+      #     puts e
+      #   end
+      # end
       redirect_to post_path(@post)
     else
         render :new
