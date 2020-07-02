@@ -3,7 +3,11 @@
 
 		<%= attachment_image_tag @post, :image, format: 'jpeg', fallback: "no_image.jpg", class: "post-show-image" %>
 
-
+		 <div class="post-tags col-md-12">
+		      <% @post.tags.each do |t| %>
+                <span class="label label-primary"><%= t.tag_name %></span>
+              <% end %>
+         </div>
 
 		<h3><%= @post.title %></h3>
 
@@ -15,9 +19,9 @@
 		</div>
 
 		<div class="post-tag col-md-12">
-		      <% @post.tags.each do |t| %>
-                <span class="label label-primary"><%= t.tag_name %></span>
-              <% end %>
+			<% @post.tags.each do |tag| %>
+  				<p>#<%= tag.tag_name %></p>
+			<% end %>
 		</div>
 
 		<% if @post.user == current_user %>
