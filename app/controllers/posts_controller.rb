@@ -23,15 +23,15 @@ class PostsController < ApplicationController
     if @post.save
       tag_list = tag_params[:tag_names].delete(" ").split(",")
       tags = Vision.get_image_data(@post.image)
-      @post.save_tags(tag_list + tags)
-      # tags.each do |tag|
-      #   begin
-      #     @post.tags.create(tag_name: tag)
-      #   rescue => e
-      #     puts e
-      #   end
-      # end
-      redirect_to post_path(@post)
+      cats = ["Cat","Cats"]
+      if cats.any? { |t| tags.include?(t) }
+        @post.save_tags(tag_list)
+        redirect_to post_path(@post)
+      else
+        @post.destroy
+        flash[:danger] = '猫の画像を選択してください'
+        redirect_to new_post_path
+      end
     else
         render :new
     end

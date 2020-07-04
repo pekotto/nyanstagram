@@ -3,12 +3,6 @@
 
 		<%= attachment_image_tag @post, :image, format: 'jpeg', fallback: "no_image.jpg", class: "post-show-image" %>
 
-		 <div class="post-tags col-md-12">
-		      <% @post.tags.each do |t| %>
-                <span class="label label-primary"><%= t.tag_name %></span>
-              <% end %>
-         </div>
-
 		<h3><%= @post.title %></h3>
 
 
